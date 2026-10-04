@@ -1,11 +1,11 @@
 ---
-import { SITE, SERVICES } from '../data/site.js';
+import { SITE, SERVICES, GROUPS } from '../data/site.js';
 ---
 <footer class="ftr"><div class="wrap">
   <div class="fgrid">
     <div><img src="/assets/logo.png" alt={SITE.name} width="145" height="56" loading="lazy" /><p>People-transformation, not training. Durban-based, 100% female-owned and managed, trusted across government, parastatals and corporates.</p></div>
     <div><h4>Company</h4><ul><li><a href="/about/">About Khula</a></li><li><a href="/services/">Services</a></li><li><a href="/contact/">Contact</a></li><li><a href="/corporate-training-durban/">Corporate Training Durban</a></li></ul></div>
-    <div><h4>Services</h4><ul>{SERVICES.map((s) => <li><a href={`/services/${s.slug}/`}>{s.title}</a></li>)}</ul></div>
+    <div>{GROUPS.map(([g, label], gi) => <Fragment><h4 style={gi ? 'margin-top:26px' : undefined}>{label}</h4><ul>{SERVICES.filter((s) => s.group === g).map((s) => <li><a href={`/services/${s.slug}/`}>{s.title}</a></li>)}</ul></Fragment>)}</div>
     <div><h4>Talk to us</h4><ul><li><a href={`tel:${SITE.tel}`}>{SITE.phone}</a></li><li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li><li>Durban, KwaZulu-Natal</li><li>{SITE.hours}</li></ul></div>
   </div>
   <div class="fbar"><span>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</span><span>Learning to Live, Living to Learn</span></div>

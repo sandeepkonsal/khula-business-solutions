@@ -4,11 +4,14 @@ import Arrow from '../../components/Arrow.astro';
 import Icon from '../../components/Icon.astro';
 import Tri from '../../components/Tri.astro';
 import CtaBand from '../../components/CtaBand.astro';
-import { SERVICES } from '../../data/site.js';
+import { SERVICES, GROUPS } from '../../data/site.js';
 import { crumbs } from '../../data/schema.js';
 ---
-<Base title="Corporate Training, Coaching & Change Services | Khula Durban" desc="Nine specialist services: diagnostics, NLP coaching, tailored training, behaviour transformation, change & project management, train the trainer and digital marketing." path="/services/" active="services" ld={[crumbs([['Home', '/'], ['Services', '/services/']])]}>
-  <section class="phero"><Tri /><div class="wrap"><div class="crumbs"><a href="/">Home</a><span>/</span>Services</div><span class="eyebrow">Our services</span><h1>We don’t deliver training. We solve business performance problems <span class="grad-text">through learning.</span></h1><p class="lead">Nine specialist services, each built from scratch around your culture, challenges and desired outcomes.</p></div></section>
-  <section class="sec dark" style="padding-top:60px"><div class="wrap"><div class="cards">{SERVICES.map((s, i) => <a class="card rv" style={`--d:${i % 4}`} href={`/services/${s.slug}/`}><span class="n">{s.n}</span><Icon class="ic" d={s.icon} /><h2 style="font-size:1.25rem;color:#fff;margin:36px 0 10px">{s.title}</h2><p>{s.short}</p><span class="go">Learn more <Arrow /></span></a>)}</div></div></section>
+<Base title="Corporate Training, Coaching & Change Services | Khula Durban" desc="Twelve specialist services: NLP coaching, tailored training, change & project management, plus digital marketing, website and app development and branding." path="/services/" active="services" ld={[crumbs([['Home', '/'], ['Services', '/services/']])]}>
+  <section class="phero"><Tri /><div class="wrap"><div class="crumbs"><a href="/">Home</a><span>/</span>Services</div><span class="eyebrow">Our services</span><h1>We don’t deliver training. We solve business performance problems <span class="grad-text">through learning.</span></h1><p class="lead">Twelve specialist services across people performance and digital growth, each built from scratch around your culture, challenges and desired outcomes.</p></div></section>
+  <section class="sec dark" style="padding-top:60px"><div class="wrap">{GROUPS.map(([g, label, blurb]) => <Fragment>
+    <div class="grp rv"><h2>{label}</h2><p>{blurb}</p></div>
+    <div class="cards">{SERVICES.filter((s) => s.group === g).map((s, i) => <a class="card rv" style={`--d:${i % 3}`} href={`/services/${s.slug}/`}><span class="n">{s.n}</span><Icon class="ic" d={s.icon} /><h3>{s.title}</h3><p>{s.short}</p><span class="go">Learn more <Arrow /></span></a>)}</div>
+  </Fragment>)}</div></section>
   <CtaBand />
 </Base>

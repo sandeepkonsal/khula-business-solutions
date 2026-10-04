@@ -8,7 +8,7 @@ import { SITE, SERVICES } from '../../data/site.js';
 import { crumbs, faq } from '../../data/schema.js';
 
 export function getStaticPaths() {
-  return SERVICES.map((s, idx) => ({ params: { slug: s.slug }, props: { s, related: [1, 2, 3].map((k) => SERVICES[(idx + k) % SERVICES.length]) } }));
+  return SERVICES.map((s, idx) => ({ params: { slug: s.slug }, props: { s, related: [...SERVICES.slice(idx + 1), ...SERVICES.slice(0, idx)].sort((a, b) => (b.group === s.group) - (a.group === s.group)).slice(0, 3) } }));
 }
 const { s, related } = Astro.props;
 const p = `/services/${s.slug}/`;

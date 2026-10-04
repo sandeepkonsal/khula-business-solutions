@@ -4,12 +4,12 @@ import Arrow from '../components/Arrow.astro';
 import Icon from '../components/Icon.astro';
 import Faq from '../components/Faq.astro';
 import CtaBand from '../components/CtaBand.astro';
-import { SITE, SERVICES, TESTIMONIALS, CLIENTS, HOME_FAQ } from '../data/site.js';
+import { SITE, SERVICES, GROUPS, TESTIMONIALS, CLIENTS, HOME_FAQ } from '../data/site.js';
 import { org, faq } from '../data/schema.js';
 
 const slides = [
   { eb: 'People-transformation, not training', h: 'Learning to live,|Living to learn.', caps: true, first: true, lead: 'Khula Business Solutions has spent almost three decades helping leaders and organisations close the gap between the performance they’re delivering and the performance they’re actually capable of, built from scratch, every time.', cta: 'Let’s Talk', core: ['29+', 'Years of experience'], chips: ['Built from scratch', 'Behaviour-led', 'Measured impact'] },
-  { eb: 'Durban · 29+ years of people-transformation', h: 'People-transformation, not training.', lead: 'We solve business performance problems through learning. Every intervention is built from scratch around your culture, your challenges and your numbers.', core: ['9', 'Specialist services'], chips: ['Built from scratch', 'Behaviour-led', 'Measured impact'] },
+  { eb: 'Durban · 29+ years of people-transformation', h: 'People-transformation, not training.', lead: 'We solve business performance problems through learning. Every intervention is built from scratch around your culture, your challenges and your numbers.', core: [String(SERVICES.length), 'Specialist services'], chips: ['Built from scratch', 'Behaviour-led', 'Measured impact'] },
   { eb: 'The human operating system', h: 'The bottleneck is rarely the system. It’s the people behind it.', lead: 'When organisations think they have a performance problem, they usually have a behaviour problem. We close the gap between the performance you deliver and the performance you are capable of.', core: ['100%', 'Female-owned & managed'], chips: ['NLP-certified', 'Evidence-based', 'Relentlessly tailored'] },
   { eb: 'Trusted across all three tiers', h: 'Government. Parastatal. Corporate.', lead: 'From Transnet and Unilever to the KZN Department of Education, leaders trust Khula to turn learning into lasting performance.', core: ['3', 'Client tiers served'], chips: ['Transnet', 'RCL Foods', 'Unilever'] },
 ];
@@ -48,12 +48,15 @@ const ld = [org, { '@context': 'https://schema.org', '@type': 'WebSite', name: S
       <p>Based in Durban, Khula Business Solutions has spent almost three decades helping leaders and organisations close that gap, moving from the performance they are delivering to the performance they are actually capable of.</p>
       <a class="btn btn-dark" href="/about/">Our story <Arrow /></a></div>
     <div class="rv r"><div class="quote"><blockquote>Sustainable performance is never just about strategy. It’s about the people executing it.</blockquote><cite>Thilo Nagiah, Founder</cite></div>
-      <div class="stats"><div class="stat"><b data-to="29" data-suf="+">0</b><span>Years of people-transformation experience</span></div><div class="stat"><b data-to="100" data-suf="%">0</b><span>Female-owned & managed</span></div><div class="stat"><b data-to="9">0</b><span>Specialist services under one roof</span></div></div></div>
+      <div class="stats"><div class="stat"><b data-to="29" data-suf="+">0</b><span>Years of people-transformation experience</span></div><div class="stat"><b data-to="100" data-suf="%">0</b><span>Female-owned & managed</span></div><div class="stat"><b data-to={SERVICES.length}>0</b><span>Specialist services under one roof</span></div></div></div>
   </div></section>
 
   <section class="sec dark"><div class="wrap">
-    <div class="sec-head rv"><span class="eyebrow">Our services</span><h2>We don’t deliver training. We solve business performance problems <span class="grad-text">through learning.</span></h2></div>
-    <div class="cards">{SERVICES.map((s, i) => <a class="card rv" style={`--d:${i % 4}`} href={`/services/${s.slug}/`}><span class="n">{s.n}</span><Icon class="ic" d={s.icon} /><h3>{s.title}</h3><p>{s.short}</p><span class="go">Learn more <Arrow /></span></a>)}</div>
+    <div class="sec-head rv"><span class="eyebrow">Our services</span><h2>We don’t deliver training. We solve business performance problems <span class="grad-text">through learning,</span> and help you grow online.</h2></div>
+    {GROUPS.map(([g, label, blurb]) => <Fragment>
+      <div class="grp rv"><h3>{label}</h3><p>{blurb}</p></div>
+      <div class="cards">{SERVICES.filter((s) => s.group === g).map((s, i) => <a class="card rv" style={`--d:${i % 3}`} href={`/services/${s.slug}/`}><span class="n">{s.n}</span><Icon class="ic" d={s.icon} /><h3>{s.title}</h3><p>{s.short}</p><span class="go">Learn more <Arrow /></span></a>)}</div>
+    </Fragment>)}
   </div></section>
 
   <section class="sec cream"><div class="wrap">
