@@ -7,7 +7,7 @@ export const org = {
   address: { '@type': 'PostalAddress', addressLocality: 'Durban', addressRegion: 'KwaZulu-Natal', addressCountry: 'ZA' },
   areaServed: [{ '@type': 'City', name: 'Durban' }, { '@type': 'AdministrativeArea', name: 'KwaZulu-Natal' }, { '@type': 'Country', name: 'South Africa' }],
   openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '16:00' }],
-  founder: { '@type': 'Person', name: 'Thilo Nagiah' },
+  founder: { '@type': 'Person', name: 'Thilo Nagiah', jobTitle: 'Founder', image: SITE.url + '/images/thilo-nagiah.webp' },
 };
 export const crumbs = (items) => ({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c[0], item: SITE.url + c[1] })) });
 export const faq = (f) => ({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: f.map((q) => ({ '@type': 'Question', name: q[0], acceptedAnswer: { '@type': 'Answer', text: q[1] } })) });

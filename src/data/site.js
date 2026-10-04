@@ -184,11 +184,15 @@ const TESTIMONIALS = [
 const CLIENTS = ['Transnet', 'Unilever', 'RCL Foods', 'Prasa', 'Ezemvelo KZN Wildlife', 'Smith’s Manufacturing', 'Department of Education', 'Meropa Communications', 'Ethekwini Municipality', 'Department of Environmental Affairs'];
 
 const HOME_FAQ = [
-  ['What does Khula Business Solutions do?', 'Khula Business Solutions is a Durban-based people-transformation consultancy. We solve business performance problems through learning, using tailored training, NLP-based coaching, change management, project management and behaviour transformation.'],
-  ['Where are you based and who do you serve?', 'We are based in Durban, KwaZulu-Natal, and work with government departments, parastatals and corporate clients across South Africa.'],
-  ['How is Khula different from other training providers?', 'Every programme is built from scratch around your culture, challenges and numbers. There is no recycled courseware. We also measure impact with pre- and post-intervention diagnostics, so results are evidenced.'],
-  ['Is Khula Business Solutions female-owned?', 'Yes. Khula is 100% female-owned and managed, led by founder Thilo Nagiah with nearly three decades of people-transformation experience.'],
-  ['How do I get a quote?', 'Call +27 83 570 1564, email thilo@khulabs.co.za or send the enquiry form. We will arrange a conversation to understand your challenge before proposing a solution.']
+  ['What services does Khula Business Solutions offer?', 'Our core services are pre- and post-intervention diagnostics, NLP-based executive, business and life coaching, tailored training solutions, mindset and behaviour transformation, change management, project management, business and computer skills training, and train the trainer programmes.'],
+  ['How do you customise your solutions to our needs?', 'Nothing is recycled. Every intervention is built from scratch around your business, culture, challenges and desired outcomes. We start with a conversation, and where it helps a diagnostic, so the programme targets what is really holding performance back.'],
+  ['How do you measure the impact of your interventions?', 'We benchmark before and after every intervention using psychometric tools and qualitative insight, so impact is measured, not assumed.'],
+  ['What is the difference between your training and coaching services?', 'Tailored training builds skills and shifts behaviour across groups and teams. NLP-based coaching works one-on-one with executives, business owners and professionals on leadership, resilience and personal performance. Many clients combine the two.'],
+  ['Can you help with change and projects, not just training?', 'Yes. Our change management service helps teams navigate transition and embed lasting change, and our project management service covers end-to-end planning, execution and oversight, with the people side managed as carefully as the plan.'],
+  ['Can you train our own trainers and facilitators?', 'Yes. Our Train the Trainer programmes equip your internal trainers with the skills and confidence to design, deliver and sustain learning long after we have left the room.'],
+  ['Who do you work with, and where?', 'We are based in Durban and work with government departments, parastatals and corporate clients, including Transnet, Unilever, RCL Foods, Prasa, Ezemvelo KZN Wildlife, Smith’s Manufacturing, the Department of Education and Meropa Communications.'],
+  ['Is your approach grounded in a particular methodology?', 'Our work is practical, evidence-based and relentlessly tailored. Activities are interactive and game-based, purpose-mapped to a behavioural outcome and debriefed using NLP-based techniques, which our founder is certified in.'],
+  ['How do I get a quote or book an appointment?', 'Call +27 83 570 1564, email thilo@khulabs.co.za or send the enquiry form. We will arrange a conversation to understand your challenge before proposing a solution.']
 ];
 
 export { SITE, SERVICES, TESTIMONIALS, CLIENTS, HOME_FAQ };

@@ -363,3 +363,10 @@ section{position:relative}
 .who p{margin:0;color:#d3c6ba}
 @media(max-width:1020px){.phero .wrap.hero2{grid-template-columns:1fr;gap:40px}.art-frame{max-width:560px}.inc-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.inc-grid{grid-template-columns:1fr}.who{flex-direction:column;gap:8px}}
+
+/* founder portrait */
+.portrait{margin:0;border-radius:var(--r);overflow:hidden;background:var(--black);box-shadow:0 30px 60px rgba(184,92,32,.2)}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover}
+.portrait figcaption{padding:18px 22px;color:#fff;border-top:3px solid var(--copper)}
+.portrait figcaption b{display:block;font-family:var(--f-head);font-size:1.2rem}
+.portrait figcaption span{color:var(--amber);font-size:.9rem}
