@@ -1,5 +1,5 @@
 ---
-import { SERVICES, GROUPS } from '../data/site.js';
+import { SERVICES } from '../data/site.js';
 const { active = '' } = Astro.props;
 ---
 <header class="hdr"><div class="wrap">
@@ -10,7 +10,7 @@ const { active = '' } = Astro.props;
     <a href="/about/" aria-current={active === 'about' ? 'page' : undefined}>About</a>
     <div class="dd"><button aria-haspopup="true">Services ▾</button>
       <div class="dd-menu">
-        {GROUPS.map(([g, label]) => <Fragment><span class="dd-h">{label}</span>{SERVICES.filter((s) => s.group === g).map((s) => <a href={`/services/${s.slug}/`}>{s.title}</a>)}</Fragment>)}
+        {SERVICES.map((s) => <a href={`/services/${s.slug}/`}>{s.title}</a>)}
         <a href="/services/"><b>All services →</b></a>
       </div></div>
     <a href="/contact/" aria-current={active === 'contact' ? 'page' : undefined}>Contact</a>

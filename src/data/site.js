@@ -12,7 +12,7 @@ const SITE = {
 
 const SERVICES = [
   {
-    slug: 'pre-post-intervention-diagnostic', group: 'people', n: '01',
+    slug: 'pre-post-intervention-diagnostic', n: '01',
     title: 'Pre- & Post-Intervention Diagnostic',
     short: 'Benchmark before and after every intervention so impact is measured, not assumed.',
     mt: 'Pre & Post Training Diagnostic Assessments | Durban | Khula',
@@ -29,7 +29,7 @@ const SERVICES = [
     icon: '<path d="M4 20V10m6 10V4m6 16v-7m4 7H2"/><path d="M4 6l6-3 6 6 4-3"/>'
   },
   {
-    slug: 'nlp-executive-coaching', group: 'people', n: '02',
+    slug: 'nlp-executive-coaching', n: '02',
     title: 'NLP-Based Executive, Business & Life Coaching',
     short: 'Targeted coaching for leadership, resilience and high performance, grounded in NLP.',
     mt: 'NLP Executive & Business Coaching Durban | Khula',
@@ -46,7 +46,7 @@ const SERVICES = [
     icon: '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/><path d="M17 3l1.5 1.5L21 2"/>'
   },
   {
-    slug: 'tailored-training-solutions', group: 'people', n: '03',
+    slug: 'tailored-training-solutions', n: '03',
     title: 'Tailored Training Solutions',
     short: 'Learning experiences designed and delivered around your strategy and goals.',
     mt: 'Tailored Corporate Training Durban | Custom Programmes | Khula',
@@ -63,7 +63,7 @@ const SERVICES = [
     icon: '<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/>'
   },
   {
-    slug: 'mindset-behaviour-transformation', group: 'people', n: '04',
+    slug: 'mindset-behaviour-transformation', n: '04',
     title: 'Mindset & Behaviour Transformation',
     short: 'Shift mindset, behaviour, habits and culture to unlock sustainable performance.',
     mt: 'Mindset & Behaviour Change Programmes Durban | Khula',
@@ -80,7 +80,7 @@ const SERVICES = [
     icon: '<path d="M12 3v4m0 10v4M3 12h4m10 0h4"/><circle cx="12" cy="12" r="4"/><path d="M5.6 5.6l2.8 2.8m7.2 7.2l2.8 2.8m0-12.8l-2.8 2.8m-7.2 7.2l-2.8 2.8"/>'
   },
   {
-    slug: 'change-management', group: 'people', n: '05',
+    slug: 'change-management', n: '05',
     title: 'Change Management',
     short: 'Structured support to help teams navigate transition and embed lasting change.',
     mt: 'Change Management Consulting Durban & South Africa | Khula',
@@ -97,7 +97,7 @@ const SERVICES = [
     icon: '<path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3L4 15"/><path d="M4 20v-5h5"/>'
   },
   {
-    slug: 'project-management', group: 'people', n: '06',
+    slug: 'project-management', n: '06',
     title: 'Project Management',
     short: 'End-to-end planning, execution and oversight for impactful delivery.',
     mt: 'Project Management Services & Training Durban | Khula',
@@ -114,7 +114,7 @@ const SERVICES = [
     icon: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16M13 13h5M13 16h3"/>'
   },
   {
-    slug: 'business-computer-skills-training', group: 'people', n: '07',
+    slug: 'business-computer-skills-training', n: '07',
     title: 'Business & Computer Skills Training',
     short: 'Practical skills development to boost operational efficiency and digital fluency.',
     mt: 'Business & Computer Skills Training Durban | Khula',
@@ -131,7 +131,7 @@ const SERVICES = [
     icon: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M8 9l2 2-2 2m4 0h3"/>'
   },
   {
-    slug: 'train-the-trainer', group: 'people', n: '08',
+    slug: 'train-the-trainer', n: '08',
     title: 'Train the Trainer',
     short: 'Equip internal trainers with the skills and confidence to sustain learning.',
     mt: 'Train the Trainer Programmes Durban | Facilitation Skills | Khula',
@@ -148,7 +148,7 @@ const SERVICES = [
     icon: '<circle cx="9" cy="7" r="3.5"/><path d="M2 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/><path d="M17 4l5 3-5 3z"/>'
   },
   {
-    slug: 'digital-marketing', group: 'digital', n: '09',
+    slug: 'digital-marketing', n: '09',
     title: 'Digital Marketing',
     short: 'Search ads, SEO and tracking that bring in enquiries and show what each one costs.',
     mt: 'Digital Marketing Durban | Google Ads & SEO | Khula',
@@ -159,61 +159,10 @@ const SERVICES = [
       'Many businesses spend on ads and a website without knowing what comes back. We build your digital marketing around measurable outcomes: the calls, forms and WhatsApp messages that turn into customers.',
       'The same principle runs through all of Khula\u2019s work: start from a baseline, change what matters, then measure. We set up proper tracking first, so every decision on budget, keywords and pages is based on your own numbers.'
     ],
-    inc: ['Google Ads setup and management, including Search and Performance Max campaigns', 'Search engine optimisation: on-page, technical and local SEO', 'High-converting landing pages and website improvements', 'Social media advertising and email marketing campaigns', 'Conversion tracking with Google Tag Manager and Google Analytics 4', 'Plain-language monthly reporting on enquiries and cost per lead'],
+    inc: ['Google Ads setup and management, including Search and Performance Max campaigns', 'Search engine optimisation: on-page, technical and local SEO', 'High-converting landing pages and website improvements', 'Conversion tracking with Google Tag Manager and Google Analytics 4', 'Plain-language monthly reporting on enquiries and cost per lead'],
     who: 'Businesses in Durban and across South Africa that want a steady flow of enquiries, and teams whose current ads or website are not showing clear results.',
     faq: [['Which digital marketing services do you offer?', 'We cover Google Ads, SEO, landing pages and website improvements, and conversion tracking and reporting. Ask us how they can be combined for your goals.'], ['How will I know the marketing is working?', 'We set up conversion tracking before spending your budget, so calls, forms and messages are counted. You receive reporting that ties spend to enquiries.'], ['Do I need a new website first?', 'Not always. We review your current site and landing pages, and recommend only the changes that will improve results.']],
     icon: '<path d="M3 11v3a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15 9a4 4 0 0 1 0 6"/><path d="M18 6a8 8 0 0 1 0 12"/>'
-  },
-  {
-    slug: 'website-development', group: 'digital', n: '10',
-    title: 'Website Development',
-    short: 'Fast, mobile-friendly, search-ready websites built to turn visitors into enquiries.',
-    mt: 'Website Development Durban | Business Websites | Khula',
-    md: 'Custom website design and development in Durban. Fast, mobile-friendly, SEO-ready business websites built to turn visitors into enquiries. Khula Business Solutions.',
-    h1: 'Website Development for Businesses That Want Enquiries',
-    lead: 'A website should work like your best salesperson: clear, fast and always on. We design and build sites around what your visitors need to do next.',
-    intro: [
-      'We design every website from scratch around your brand, your audience and your goals, so it looks like your business and not like a template. Each build is mobile-first, fast to load and set up for search from day one.',
-      'We also make sure the site is ready to be measured. Contact forms, call and WhatsApp buttons and analytics are in place at launch, so you can see which pages bring in enquiries.'
-    ],
-    inc: ['Custom design built around your brand and audience', 'Responsive build that works on phones, tablets and desktops', 'SEO foundations: page speed, clean structure, metadata and structured data', 'Contact forms, click-to-call and WhatsApp enquiry buttons', 'Analytics and conversion tracking set up at launch', 'Hosting guidance, security and ongoing maintenance support'],
-    who: 'Businesses launching a first website, companies whose current site is slow or dated, and organisations that need a site that supports Google Ads and SEO.',
-    faq: [['How long does a website take to build?', 'It depends on the number of pages and features. We agree a clear timeline in the proposal once we understand what you need.'], ['Will my website show up on Google?', 'We build in the SEO foundations that help search engines understand your site. Ranking also depends on your content, competition and ongoing optimisation, which we can support with our digital marketing service.'], ['Can I update the website myself?', 'Yes. We can set the site up so you can edit key content, or we can handle updates for you.']],
-    icon: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M7 6.5h.01M10 6.5h.01"/><path d="M8 14l2 2-2 2m5 0h3"/>'
-  },
-  {
-    slug: 'app-development', group: 'digital', n: '11',
-    title: 'App Development',
-    short: 'Mobile and web apps that automate your processes and put your service in customers\u2019 hands.',
-    mt: 'App Development Durban | Mobile & Web Apps | Khula',
-    md: 'Mobile and web app development in Durban. From idea to launch: design, build and support apps that automate processes and serve your customers. Khula Business Solutions.',
-    h1: 'Mobile & Web App Development, From Idea to Launch',
-    lead: 'Turn a process, a service or an idea into an app your team or customers can use every day.',
-    intro: [
-      'Good apps start with a clear problem. We begin by understanding who will use the app and what it needs to do, then scope the simplest version that delivers value and build from there.',
-      'We handle design, development, testing and launch, and stay on hand afterwards so the app keeps working as your business grows.'
-    ],
-    inc: ['Discovery workshop and scoping of features and priorities', 'User experience and interface design', 'Mobile apps and web apps built for your audience and devices', 'Integration with your existing systems, payments and messaging', 'Testing, launch and post-launch support'],
-    who: 'Businesses that want to automate internal processes, give customers a self-service tool, or test a new product idea with a first working version.',
-    faq: [['Do I need a mobile app or a web app?', 'It depends on who will use it and how. We help you choose, and often recommend starting with a web app because it works on any device.'], ['How much does an app cost?', 'Cost depends on features and complexity. After a discovery conversation we scope the first version and give you a clear quote.'], ['Can the app connect to our existing systems?', 'Yes. We can integrate with common business systems, payment services and messaging tools, depending on what they allow.']],
-    icon: '<rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18.5h2"/><path d="M10 7h4M10 10h4"/>'
-  },
-  {
-    slug: 'branding-design', group: 'digital', n: '12',
-    title: 'Branding & Design',
-    short: 'Logo, brand identity and marketing design that make your business look credible.',
-    mt: 'Branding & Graphic Design Durban | Logo & Identity | Khula',
-    md: 'Branding and graphic design in Durban: logos, brand identity, social media and marketing collateral that make your business look credible. Khula Business Solutions.',
-    h1: 'Branding & Design That Makes Your Business Look Credible',
-    lead: 'Clients judge a business in seconds. We create a clear, consistent identity that works across your website, ads, documents and social media.',
-    intro: [
-      'A strong brand is more than a logo. It is the colours, type, tone and visuals that make every touchpoint feel like the same trusted business.',
-      'We design identities and marketing materials that are consistent and easy to use, so your team can produce professional work without starting from scratch each time.'
-    ],
-    inc: ['Logo design and brand identity', 'Colour, typography and brand guidelines', 'Social media graphics and ad creatives', 'Company profiles, proposals and presentation design', 'Brand assets prepared for web and print'],
-    who: 'New businesses that need an identity, established companies that want to refresh a dated look, and teams that need consistent marketing materials.',
-    faq: [['What does a brand identity include?', 'Typically a logo, colour palette, typography and guidelines on how to use them, plus templates for the materials you use most.'], ['Can you refresh our existing logo instead of replacing it?', 'Yes. We can modernise what you already have, or build something new if the current brand no longer fits.'], ['Do you design for print as well as digital?', 'Yes. We prepare artwork for both screens and print.']],
-    icon: '<circle cx="12" cy="12" r="9"/><circle cx="8.5" cy="10" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="15.5" cy="10" r="1"/><path d="M12 21a2.5 2.5 0 0 1 0-5h1.5a2 2 0 0 0 0-4"/>'
   }
 ];
 
@@ -227,7 +176,7 @@ const TESTIMONIALS = [
 const CLIENTS = ['Transnet', 'Unilever', 'RCL Foods', 'Prasa', 'Ezemvelo KZN Wildlife', 'Smith’s Manufacturing', 'Department of Education', 'Meropa Communications', 'Ethekwini Municipality', 'Department of Environmental Affairs'];
 
 const HOME_FAQ = [
-  ['What does Khula Business Solutions do?', 'Khula Business Solutions is a Durban-based people-transformation consultancy. We solve business performance problems through learning, using tailored training, NLP-based coaching, change management, project management and behaviour transformation. We also offer digital services: digital marketing, website and app development, and branding.'],
+  ['What does Khula Business Solutions do?', 'Khula Business Solutions is a Durban-based people-transformation consultancy. We solve business performance problems through learning, using tailored training, NLP-based coaching, change management, project management and behaviour transformation.'],
   ['Where are you based and who do you serve?', 'We are based in Durban, KwaZulu-Natal, and work with government departments, parastatals and corporate clients across South Africa.'],
   ['How is Khula different from other training providers?', 'Every programme is built from scratch around your culture, challenges and numbers. There is no recycled courseware. We also measure impact with pre- and post-intervention diagnostics, so results are evidenced.'],
   ['Is Khula Business Solutions female-owned?', 'Yes. Khula is 100% female-owned and managed, led by founder Thilo Nagiah with nearly three decades of people-transformation experience.'],
@@ -235,5 +184,3 @@ const HOME_FAQ = [
 ];
 
 export { SITE, SERVICES, TESTIMONIALS, CLIENTS, HOME_FAQ };
-
-export const GROUPS = [['people', 'People & Performance', 'Learning, coaching and change that close the gap between strategy and the people executing it.'], ['digital', 'Digital & Growth', 'Marketing, websites, apps and branding that bring in enquiries and help your business grow.']];

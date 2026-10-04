@@ -333,11 +333,3 @@ section{position:relative}
 /* tagline slide: bold uppercase sans, as on the original site */
 .slide .h1.caps{font-family:var(--f-body);text-transform:uppercase;font-weight:700;letter-spacing:.01em;line-height:1.02;font-size:clamp(2.3rem,6.4vw,5.2rem)}
 .slide .h1.caps .w{padding-bottom:.06em}
-
-/* service groups + dropdown headings */
-.grp{margin:56px 0 26px;max-width:640px}
-.sec>.wrap>.sec-head+.grp,.sec>.wrap>.grp:first-child{margin-top:0}
-.grp h2,.grp h3{color:#fff;font-size:1.6rem;margin:0 0 6px}
-.grp p{color:#b9ada1;margin:0}
-.dd-h{display:block;padding:12px 14px 4px;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);font-weight:600}
-.dd-h:not(:first-child){margin-top:6px;border-top:1px solid var(--line)}
