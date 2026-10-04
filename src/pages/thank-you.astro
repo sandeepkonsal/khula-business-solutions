@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import Tri from '../components/Tri.astro';
+import Arrow from '../components/Arrow.astro';
+import { SITE } from '../data/site.js';
+---
+<Base title="Thank You | Khula Business Solutions" desc="Thanks for your enquiry. We will be in touch within one working day." path="/thank-you/" noindex>
+  <script is:inline slot="head">window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'conversion_thank_you'});</script>
+  <section class="phero" style="min-height:80vh;display:flex;align-items:center"><Tri /><div class="wrap"><span class="eyebrow">Enquiry received</span><h1>Thank you. <span class="grad-text">We’ll be in touch.</span></h1><p class="lead">A member of the Khula team will contact you within one working day. If it’s urgent, call <a href={`tel:${SITE.tel}`} style="color:var(--amber)">{SITE.phone}</a>.</p><a class="btn btn-p" href="/">Back to home <Arrow /></a></div></section>
+</Base>

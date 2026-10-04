@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import Tri from '../components/Tri.astro';
+import Form from '../components/Form.astro';
+import Icon from '../components/Icon.astro';
+import * as I from '../data/icons.js';
+import { SITE } from '../data/site.js';
+import { crumbs } from '../data/schema.js';
+const ld = [crumbs([['Home', '/'], ['Contact', '/contact/']]), { '@context': 'https://schema.org', '@type': 'ContactPage', url: SITE.url + '/contact/', mainEntity: { '@id': SITE.url + '/#org' } }];
+---
+<Base title="Contact Khula Business Solutions | Book Appointment Durban" desc="Contact Khula Business Solutions in Durban. Call +27 83 570 1564, email thilo@khulabs.co.za or book an appointment. Open Mon–Fri 8am–4pm." path="/contact/" active="contact" ld={ld}>
+  <section class="phero"><Tri /><div class="wrap"><div class="crumbs"><a href="/">Home</a><span>/</span>Contact</div><span class="eyebrow">Contact</span><h1>Let’s <span class="grad-text">talk.</span></h1><p class="lead">If you’re ready to build an organisation where people genuinely thrive and performance follows, we’d love to hear from you.</p></div></section>
+  <section class="cta sec" id="enquire" style="padding-top:70px"><div class="wrap">
+    <div class="rv l"><h2>Get in touch</h2><p>Call, email, WhatsApp or send the form. We reply within one working day.</p>
+      <ul class="cinfo"><li><a href={`tel:${SITE.tel}`}><Icon d={I.phone} /><span>{SITE.phone}</span></a></li><li><a href={`mailto:${SITE.email}`}><Icon d={I.mail} /><span>{SITE.email}</span></a></li><li><a href={SITE.wa} target="_blank" rel="noopener"><Icon d={I.wa} /><span>Chat on WhatsApp</span></a></li><li><span><Icon d={I.pin} />Durban, KwaZulu-Natal, South Africa</span></li><li><span><Icon d={I.clock} />{SITE.hours}</span></li></ul></div>
+    <div class="rv r"><Form id="f-contact" /></div>
+  </div></section>
+</Base>

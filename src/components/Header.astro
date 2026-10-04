@@ -1,0 +1,18 @@
+---
+import { SERVICES } from '../data/site.js';
+const { active = '' } = Astro.props;
+---
+<header class="hdr"><div class="wrap">
+  <a class="logo" href="/" aria-label="Khula Business Solutions home"><img src="/assets/logo.png" alt="Khula Business Solutions" width="135" height="52" /></a>
+  <button class="burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+  <nav class="nav" aria-label="Main">
+    <a href="/" aria-current={active === 'home' ? 'page' : undefined}>Home</a>
+    <a href="/about/" aria-current={active === 'about' ? 'page' : undefined}>About</a>
+    <div class="dd"><button aria-haspopup="true">Services ▾</button>
+      <div class="dd-menu">
+        {SERVICES.map((s) => <a href={`/services/${s.slug}/`}>{s.title}</a>)}
+        <a href="/services/"><b>All services →</b></a>
+      </div></div>
+    <a href="/contact/" aria-current={active === 'contact' ? 'page' : undefined}>Contact</a>
+    <a class="btn btn-p" href="/contact/#enquire" style="padding:12px 24px">Book Appointment</a>
+  </nav></div></header>

@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import Arrow from '../../components/Arrow.astro';
+import Tri from '../../components/Tri.astro';
+import Faq from '../../components/Faq.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { SITE, SERVICES } from '../../data/site.js';
+import { crumbs, faq } from '../../data/schema.js';
+
+export function getStaticPaths() {
+  return SERVICES.map((s, idx) => ({ params: { slug: s.slug }, props: { s, related: [1, 2, 3].map((k) => SERVICES[(idx + k) % SERVICES.length]) } }));
+}
+const { s, related } = Astro.props;
+const p = `/services/${s.slug}/`;
+const ld = [crumbs([['Home', '/'], ['Services', '/services/'], [s.title, p]]), faq(s.faq), { '@context': 'https://schema.org', '@type': 'Service', name: s.title, serviceType: s.title, description: s.md, url: SITE.url + p, provider: { '@id': SITE.url + '/#org' }, areaServed: [{ '@type': 'City', name: 'Durban' }, { '@type': 'Country', name: 'South Africa' }] }];
+---
+<Base title={s.mt} desc={s.md} path={p} active="services" ld={ld}>
+  <section class="phero"><Tri /><div class="wrap">
+    <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/services/">Services</a><span>/</span>{s.title}</div>
+    <span class="eyebrow">Service {s.n}</span><h1>{s.h1}</h1><p class="lead">{s.lead}</p>
+    <div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn btn-p" href="#enquire">Book Appointment <Arrow /></a><a class="btn btn-g" href={`tel:${SITE.tel}`}>Call {SITE.phone}</a></div>
+  </div></section>
+  <section class="sec"><div class="wrap two">
+    <div class="prose rv l">{s.intro.map((t) => <p>{t}</p>)}<h2>What’s included</h2><ul>{s.inc.map((t) => <li>{t}</li>)}</ul><h2>Who it’s for</h2><p>{s.who}</p></div>
+    <aside class="side rv r">
+      <div class="box"><h3 style="color:#fff">Talk to a specialist</h3><p>Every programme is built from scratch. Tell us your challenge and we will propose a solution.</p><a class="btn btn-p" href="#enquire" style="width:100%;justify-content:center">Book Appointment</a></div>
+      <div class="list"><b style="font-family:var(--f-head)">All services</b>{SERVICES.map((x) => <a href={`/services/${x.slug}/`} style={x.slug === s.slug ? 'color:var(--copper);font-weight:600' : undefined}>{x.title}</a>)}</div>
+    </aside>
+  </div></section>
+  <section class="sec cream"><div class="wrap"><div class="sec-head rv center" style="text-align:center"><span class="eyebrow">FAQ</span><h2>{s.title}: common questions</h2></div><Faq items={s.faq} /></div></section>
+  <section class="sec"><div class="wrap"><div class="sec-head rv"><span class="eyebrow">Related services</span><h2>Often combined with</h2></div>
+    <div class="related">{related.map((r, i) => <a class="rv" style={`--d:${i}`} href={`/services/${r.slug}/`}><b>{r.title}</b><span>{r.short}</span></a>)}</div></div></section>
+  <CtaBand title="Let’s solve your performance challenge together." />
+</Base>

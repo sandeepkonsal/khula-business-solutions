@@ -1,0 +1,46 @@
+---
+import '../style.css';
+import { SITE } from '../data/site.js';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FloatCta from '../components/FloatCta.astro';
+const { title, desc, path, noindex = false, ld = [], active = '', bare = false } = Astro.props;
+const url = SITE.url + path;
+const gtmHead = SITE.gtm ? `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${SITE.gtm}');` : '';
+const ga4Head = !SITE.gtm && SITE.ga4 ? `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${SITE.ga4}');` : '';
+---
+<!doctype html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={desc} />
+  <link rel="canonical" href={url} />
+  <meta name="robots" content={noindex ? 'noindex,follow' : 'index,follow,max-image-preview:large,max-snippet:-1'} />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="geo.region" content="ZA-KZN" /><meta name="geo.placename" content="Durban" />
+  <meta property="og:type" content="website" /><meta property="og:site_name" content={SITE.name} /><meta property="og:locale" content="en_ZA" />
+  <meta property="og:title" content={title} /><meta property="og:description" content={desc} /><meta property="og:url" content={url} /><meta property="og:image" content={SITE.url + '/assets/og-image.jpg'} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/assets/favicon.png" type="image/png" /><link rel="apple-touch-icon" href="/assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="/assets/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  {gtmHead && <script is:inline set:html={gtmHead} />}
+  {SITE.ga4 && !SITE.gtm && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${SITE.ga4}`} />}
+  {ga4Head && <script is:inline set:html={ga4Head} />}
+  {ld.map((o) => <script type="application/ld+json" set:html={JSON.stringify(o)} />)}
+  <slot name="head" />
+</head>
+<body>
+  {SITE.gtm && <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${SITE.gtm}`} height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>}
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="progress" aria-hidden="true"></div>
+  {!bare && <Header active={active} />}
+  <main id="main"><slot /></main>
+  {!bare && <Footer />}
+  <FloatCta />
+  <script>import '../scripts/main.js';</script>
+</body>
+</html>

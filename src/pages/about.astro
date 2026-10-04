@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import Tri from '../components/Tri.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { SITE, CLIENTS } from '../data/site.js';
+import { crumbs } from '../data/schema.js';
+const values = ['Service excellence', 'Integrity', 'Collaboration', 'Flexibility', 'Transparency', 'Fairness'];
+const ld = [crumbs([['Home', '/'], ['About', '/about/']]), { '@context': 'https://schema.org', '@type': 'AboutPage', url: SITE.url + '/about/', mainEntity: { '@id': SITE.url + '/#org' } }];
+---
+<Base title="About Khula | Female-Owned People Transformation, Durban" desc="Meet Khula Business Solutions: a 100% female-owned Durban consultancy with 29+ years of experience closing the gap between strategy and the people executing it." path="/about/" active="about" ld={ld}>
+  <section class="phero"><Tri /><div class="wrap"><div class="crumbs"><a href="/">Home</a><span>/</span>About</div><span class="eyebrow">About Khula</span><h1>The bottleneck is rarely the system. <span class="grad-text">It’s the people behind it.</span></h1><p class="lead">Almost three decades helping leaders and organisations move from the performance they deliver to the performance they are capable of.</p></div></section>
+  <section class="sec"><div class="wrap two">
+    <div class="prose rv l"><h2 style="margin-top:0">Who we are</h2>
+      <p>A pattern we see time and again: organisations think they have a performance problem when what they actually have is a behaviour problem, the human operating system behind every strategy, system and target. You’ve probably heard it in your own boardroom: “We just need better execution.” What’s usually missing isn’t effort. It’s behavioural alignment.</p>
+      <p>Based in Durban, Khula Business Solutions has spent almost three decades helping leaders and organisations close that gap.</p>
+      <p>We don’t run one-size-fits-all programmes someone else already delivered elsewhere. Every intervention is built from scratch around your business, your culture, your challenges and your desired outcomes.</p>
+      <h2>Our philosophy</h2>
+      <p>Our founder began her career in IT training, and what stayed with her wasn’t the technology, but what it revealed: organisations were investing heavily in systems and technical capability, and still struggling. The issue was rarely the system. It was the people behind it.</p>
+      <p>That realisation shaped twenty years of people-transformation work, and led to NLP certification, not as a pivot, but as a sharper lens on something she had already spent decades observing: how people think, communicate and quietly get in their own way. It’s this lens, practical, evidence-based and relentlessly tailored, that sits behind every Khula intervention.</p>
+      <h2>What sets us apart</h2>
+      <ul><li><b>Built from scratch, every time.</b> No recycled courseware, designed around your culture, challenges and numbers.</li><li><b>Experience-led, not just theory-led.</b> Interactive, game-based methodologies so learning sticks.</li><li><b>Built for behaviour change.</b> Every activity is purpose-mapped to a behavioural outcome and debriefed using NLP-based techniques.</li></ul></div>
+    <aside class="side rv r"><div class="quote"><blockquote style="font-size:1.25rem">Sustainable performance is never just about strategy. It’s about the people executing it.</blockquote><cite>Thilo Nagiah, Founder</cite></div>
+      <div class="list"><b style="font-family:var(--f-head)">At a glance</b><a href="/services/" style="pointer-events:none">29+ years of people-transformation experience</a><a href="/services/" style="pointer-events:none">100% female-owned &amp; managed</a><a href="/services/" style="pointer-events:none">Government · Parastatal · Corporate</a></div></aside>
+  </div></section>
+  <section class="sec dark"><div class="wrap"><div class="sec-head rv"><span class="eyebrow">Vision &amp; values</span><h2>We exist to build a vibrant learning community</h2><p>Where excellence is celebrated, innovation thrives and potential is realised. Empowering people, transforming lives and inspiring change.</p></div><div class="vals rv">{values.map((v) => <span>{v}</span>)}</div></div></section>
+  <section class="sec cream"><div class="wrap"><div class="sec-head rv"><span class="eyebrow">Some of our clients</span><h2>Organisations that trust Khula</h2></div><div class="stats" style="grid-template-columns:repeat(4,1fr)">{CLIENTS.slice(0, 8).map((c, i) => <div class="stat rv" style={`--d:${i % 4}`}><span style="margin:0;color:var(--text);font:600 1.1rem var(--f-head)">{c}</span></div>)}</div></div></section>
+  <CtaBand />
+</Base>
