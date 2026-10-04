@@ -146,6 +146,23 @@ const SERVICES = [
     who: 'Internal trainers, HR and L&D teams, subject-matter experts who must train colleagues, and organisations reducing reliance on external providers.',
     faq: [['Who should attend a Train the Trainer programme?', 'Anyone who delivers or will deliver learning internally: trainers, line managers, subject-matter experts and HR practitioners.'], ['Will my trainers be able to use your methods afterwards?', 'Yes. The programme is hands-on, and participants leave with practical tools and methodologies they can apply straight away.'], ['Can the programme be tailored to our content?', 'Yes. Like all our work, it is built around your business and the content your trainers will deliver.']],
     icon: '<circle cx="9" cy="7" r="3.5"/><path d="M2 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/><path d="M17 4l5 3-5 3z"/>'
+  },
+  {
+    slug: 'digital-marketing', n: '09',
+    title: 'Digital Marketing',
+    short: 'Search ads, SEO and tracking that bring in enquiries and show what each one costs.',
+    mt: 'Digital Marketing Durban | Google Ads & SEO | Khula',
+    md: 'Digital marketing for South African businesses: Google Ads, SEO, landing pages and conversion tracking, built around enquiries and measured results. Khula, Durban.',
+    h1: 'Digital Marketing That Brings You Enquiries, Not Just Clicks',
+    lead: 'Google Ads, SEO and conversion tracking, set up around one question: how many real enquiries did this bring in, and what did each one cost?',
+    intro: [
+      'Many businesses spend on ads and a website without knowing what comes back. We build your digital marketing around measurable outcomes: the calls, forms and WhatsApp messages that turn into customers.',
+      'The same principle runs through all of Khula\u2019s work: start from a baseline, change what matters, then measure. We set up proper tracking first, so every decision on budget, keywords and pages is based on your own numbers.'
+    ],
+    inc: ['Google Ads setup and management, including Search and Performance Max campaigns', 'Search engine optimisation: on-page, technical and local SEO', 'High-converting landing pages and website improvements', 'Conversion tracking with Google Tag Manager and Google Analytics 4', 'Plain-language monthly reporting on enquiries and cost per lead'],
+    who: 'Businesses in Durban and across South Africa that want a steady flow of enquiries, and teams whose current ads or website are not showing clear results.',
+    faq: [['Which digital marketing services do you offer?', 'We cover Google Ads, SEO, landing pages and website improvements, and conversion tracking and reporting. Ask us how they can be combined for your goals.'], ['How will I know the marketing is working?', 'We set up conversion tracking before spending your budget, so calls, forms and messages are counted. You receive reporting that ties spend to enquiries.'], ['Do I need a new website first?', 'Not always. We review your current site and landing pages, and recommend only the changes that will improve results.']],
+    icon: '<path d="M3 11v3a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15 9a4 4 0 0 1 0 6"/><path d="M18 6a8 8 0 0 1 0 12"/>'
   }
 ];
 

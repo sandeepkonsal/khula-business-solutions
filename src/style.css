@@ -162,7 +162,7 @@ section{position:relative}
 .stat span{font-size:.88rem;color:var(--muted);display:block;margin-top:8px;line-height:1.4}
 
 /* services */
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .card{--mx:50%;--my:50%;position:relative;background:var(--ink);border:1px solid var(--line);border-radius:var(--r);padding:30px 26px 34px;text-decoration:none;color:#f1e7de;overflow:hidden;transition:transform .25s ease,border-color .3s;transform-style:preserve-3d;display:flex;flex-direction:column}
 .card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx) var(--my),rgba(224,120,48,.28),transparent 70%);opacity:0;transition:opacity .3s}
 .card:hover{border-color:rgba(255,184,112,.5)}
@@ -297,6 +297,7 @@ section{position:relative}
 @media(max-width:1020px){
   .rv.l,.rv.r{transform:translateY(40px)}.rv.l.in,.rv.r.in{transform:none}
   .cards{grid-template-columns:repeat(2,1fr)}
+  .cards .card:last-child:nth-child(odd){grid-column:1/-1}
   .steps{grid-template-columns:repeat(2,1fr)}.steps::before{display:none}
   .fgrid{grid-template-columns:1fr 1fr}
   .two,.split,.cta .wrap,.lp-hero .wrap{grid-template-columns:1fr;gap:44px}
