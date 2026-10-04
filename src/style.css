@@ -40,7 +40,7 @@ p{margin:0 0 1em}
 .nav>a:hover,.nav .dd>button:hover,.nav a[aria-current]{color:var(--amber)}
 .dd{position:relative}
 .dd-menu{position:absolute;top:100%;left:-20px;min-width:340px;background:#121212;border:1px solid var(--line);border-radius:16px;padding:10px;opacity:0;visibility:hidden;transform:translateY(10px);transition:.25s;box-shadow:0 30px 60px rgba(0,0,0,.5)}
-.dd:hover .dd-menu,.dd:focus-within .dd-menu{opacity:1;visibility:visible;transform:none}
+@media(hover:hover){.dd:hover .dd-menu{opacity:1;visibility:visible;transform:none}}
 .dd-menu a{display:block;padding:10px 14px;border-radius:10px;color:#eadfd5;text-decoration:none;font-size:.93rem}
 .dd-menu a:hover{background:rgba(224,120,48,.14);color:var(--amber)}
 .burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;position:relative}
@@ -370,3 +370,62 @@ section{position:relative}
 .portrait figcaption{padding:18px 22px;color:#fff;border-top:3px solid var(--copper)}
 .portrait figcaption b{display:block;font-family:var(--f-head);font-size:1.2rem}
 .portrait figcaption span{color:var(--amber);font-size:.9rem}
+
+/* ===== UX / accessibility audit fixes ===== */
+:root{--copper-text:#a64f17}
+[id]{scroll-margin-top:96px}
+h1,h2,h3{text-wrap:balance}
+p,li{text-wrap:pretty}
+body.menu-open{overflow:hidden}
+
+/* header blur on a pseudo-element: backdrop-filter on .hdr trapped the fixed mobile menu */
+.hdr.solid{background:none;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+.hdr::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:rgba(10,10,10,.9);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line);opacity:0;transition:opacity .35s}
+.hdr.solid::before{opacity:1}
+
+/* dropdown: click/tap + keyboard state */
+.caret{display:inline-block;width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:-3px 0 0 8px;transition:transform .25s}
+.dd.open .caret{transform:rotate(-135deg);margin-top:3px}
+.dd.open .dd-menu{opacity:1;visibility:visible;transform:none}
+
+/* contrast on light sections */
+.sec:not(.dark):not(.cta) .eyebrow{color:var(--copper-text)}
+.sec:not(.dark):not(.cta) .eyebrow::before{background:var(--copper-text)}
+.sec:not(.dark):not(.cta) .grad-text{background-image:linear-gradient(120deg,#c8631a,#a64f17)}
+
+/* touch targets, forms, slider controls */
+.btn{min-height:48px}
+.form input,.form select,.form textarea{font-size:16px}
+.form input:user-invalid,.form select:user-invalid{border-color:#c0392b;box-shadow:0 0 0 4px rgba(192,57,43,.12)}
+.bars button{height:44px;display:flex;align-items:flex-end;padding-bottom:8px}
+.pause{width:44px;height:44px;flex:none;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid var(--line);color:#fff;cursor:pointer;display:grid;place-items:center;transition:.25s}
+.pause:hover{background:var(--copper);color:#000;border-color:var(--copper)}
+.pause .i-play{display:none}.pause[aria-pressed=true] .i-play{display:block}.pause[aria-pressed=true] .i-pause{display:none}
+.arrows+.pause{margin-left:0}
+.tdots button{width:24px;height:24px;padding:7px;border-radius:12px;background:#dccdbf;background-clip:content-box}
+.tdots button.on{width:44px;background:var(--copper);background-clip:content-box}
+.tdots{gap:2px}
+.cinfo a{min-height:44px}
+
+@media(max-width:860px){
+  .nav{padding-bottom:calc(24px + env(safe-area-inset-bottom,0px))}
+  .dd>button{display:flex;justify-content:space-between;align-items:center}
+  .dd-menu{display:none}
+  .dd.open .dd-menu{display:block}
+  .dd-h{display:block}
+  .nav .btn{margin-top:18px;justify-content:center}
+  .ftr li a{display:inline-flex;align-items:center;min-height:44px}
+  .ftr ul{gap:0}
+  .ftr li:not(:has(a)){padding:10px 0}
+}
+@media(max-width:600px){
+  .hero-ctrl .pause{margin-left:auto}
+  .float-cta{right:12px;bottom:12px;gap:10px}
+  .float-cta a{width:48px;height:48px}
+  .float-cta .wa::after{width:48px;height:48px}
+  .ftr{padding-bottom:110px}
+}
+
+/* header CTA: keep the copper fill (.nav>a reset was removing it) */
+.nav>a.btn-p{background:var(--grad);color:#120a04;padding:12px 24px}
+.nav>a.btn-p:hover{color:#120a04}

@@ -4,12 +4,12 @@ const { active = '' } = Astro.props;
 ---
 <header class="hdr"><div class="wrap">
   <a class="logo" href="/" aria-label="Khula Business Solutions home"><img src="/assets/logo.png" alt="Khula Business Solutions" width="135" height="52" /></a>
-  <button class="burger" aria-label="Menu" aria-expanded="false"><span></span></button>
-  <nav class="nav" aria-label="Main">
+  <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav"><span></span></button>
+  <nav class="nav" id="primary-nav" aria-label="Main">
     <a href="/" aria-current={active === 'home' ? 'page' : undefined}>Home</a>
     <a href="/about/" aria-current={active === 'about' ? 'page' : undefined}>About</a>
-    <div class="dd"><button aria-haspopup="true">Services ▾</button>
-      <div class="dd-menu">
+    <div class="dd"><button type="button" aria-expanded="false" aria-controls="services-menu">Services <span class="caret" aria-hidden="true"></span></button>
+      <div class="dd-menu" id="services-menu">
         {SERVICES.map((s) => <a href={`/services/${s.slug}/`}>{s.title}</a>)}
         <a href="/services/"><b>All services →</b></a>
       </div></div>

@@ -10,14 +10,20 @@ var hdr=$('.hdr'),prog=$('#progress'),lastY=0;
 function onScroll(){
   var y=window.scrollY,h=document.documentElement.scrollHeight-innerHeight;
   if(prog)prog.style.width=(h>0?y/h*100:0)+'%';
-  if(hdr){hdr.classList.toggle('solid',y>40);hdr.classList.toggle('hide',y>500&&y>lastY+4&&!$('.nav.open'));if(y<lastY-4)hdr.classList.remove('hide')}
+  if(hdr){hdr.classList.toggle('solid',y>40);hdr.classList.toggle('hide',y>500&&y>lastY+4&&!$('.nav.open')&&!hdr.contains(document.activeElement));if(y<lastY-4)hdr.classList.remove('hide')}
   lastY=y;
   var st=$('.steps');if(st){var r=st.getBoundingClientRect();var p=Math.min(1,Math.max(0,(innerHeight*.8-r.top)/(r.height+innerHeight*.2)));st.style.setProperty('--p',(p*100).toFixed(0)+'%')}
 }
 addEventListener('scroll',onScroll,{passive:true});onScroll();
-var bg=$('.burger'),nav=$('.nav');
-if(bg)bg.addEventListener('click',function(){var o=nav.classList.toggle('open');bg.setAttribute('aria-expanded',o)});
-$$('.nav a').forEach(function(a){a.addEventListener('click',function(){if(nav)nav.classList.remove('open');if(bg)bg.setAttribute('aria-expanded','false')})});
+var bg=$('.burger'),nav=$('.nav'),dd=$('.dd'),ddb=dd&&$('button',dd);
+function setDD(o){if(!dd)return;dd.classList.toggle('open',o);ddb.setAttribute('aria-expanded',o)}
+function setMenu(o){if(!nav)return;nav.classList.toggle('open',o);document.body.classList.toggle('menu-open',o);bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Close menu':'Menu');if(!o)setDD(false)}
+if(bg)bg.addEventListener('click',function(){setMenu(!nav.classList.contains('open'))});
+if(ddb)ddb.addEventListener('click',function(){setDD(!dd.classList.contains('open'))});
+$$('.nav a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(nav&&nav.classList.contains('open')){setMenu(false);bg.focus()}else if(dd&&dd.classList.contains('open')){setDD(false);ddb.focus()}}});
+document.addEventListener('click',function(e){if(dd&&dd.classList.contains('open')&&!dd.contains(e.target)&&!(nav&&nav.classList.contains('open')))setDD(false)});
+addEventListener('resize',function(){if(innerWidth>860&&nav&&nav.classList.contains('open'))setMenu(false)});
 
 /* reveal */
 if('IntersectionObserver' in window&&!RM){
@@ -40,23 +46,27 @@ if('IntersectionObserver' in window){
 /* hero slider */
 var hero=$('.hero');
 if(hero&&hero.querySelector('.slide')){
-  var slides=$$('.slide',hero),bars=$$('.bars button',hero),cur=0,timer,DUR=7000;
+  var slides=$$('.slide',hero),bars=$$('.bars button',hero),cur=0,DUR=7000,userPaused=false,hoverPaused=false;
   hero.style.setProperty('--dur',DUR+'ms');
+  function syncPause(){hero.classList.toggle('paused',userPaused||hoverPaused||document.hidden)}
   function go(n){
     cur=(n+slides.length)%slides.length;
     slides.forEach(function(s,i){s.classList.toggle('on',i===cur);s.setAttribute('aria-hidden',i!==cur)});
     bars.forEach(function(b,i){b.classList.remove('on');void b.offsetWidth;if(i===cur)b.classList.add('on');b.setAttribute('aria-current',i===cur)});
-    clearTimeout(timer);if(!RM&&!hero.classList.contains('paused'))timer=setTimeout(function(){go(cur+1)},DUR);
     if(window.__fxBurst)window.__fxBurst();
   }
-  bars.forEach(function(b,i){b.addEventListener('click',function(){go(i)})});
-  var pv=$('.arrows .prev',hero),nx=$('.arrows .next',hero);
+  bars.forEach(function(b,i){b.addEventListener('click',function(){go(i)});b.addEventListener('animationend',function(){if(!RM&&b.classList.contains('on'))go(cur+1)})});
+  var pv=$('.arrows .prev',hero),nx=$('.arrows .next',hero),pz=$('.pause',hero);
   if(pv)pv.addEventListener('click',function(){go(cur-1)});if(nx)nx.addEventListener('click',function(){go(cur+1)});
+  if(pz)pz.addEventListener('click',function(){userPaused=!userPaused;pz.setAttribute('aria-pressed',userPaused);pz.setAttribute('aria-label',userPaused?'Play slideshow':'Pause slideshow');syncPause()});
+  hero.addEventListener('mouseenter',function(){hoverPaused=true;syncPause()});hero.addEventListener('mouseleave',function(){hoverPaused=false;syncPause()});
+  hero.addEventListener('focusin',function(){hoverPaused=true;syncPause()});hero.addEventListener('focusout',function(){hoverPaused=false;syncPause()});
   var sx=0;
   hero.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
   hero.addEventListener('touchend',function(e){var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)go(cur+(d<0?1:-1))});
-  addEventListener('keydown',function(e){if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
-  document.addEventListener('visibilitychange',function(){if(document.hidden){clearTimeout(timer)}else go(cur)});
+  addEventListener('keydown',function(e){if(e.target.closest&&e.target.closest('input,textarea,select'))return;if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
+  document.addEventListener('visibilitychange',syncPause);
+  if(RM){userPaused=true;if(pz){pz.setAttribute('aria-pressed','true');pz.setAttribute('aria-label','Play slideshow')}syncPause()}
   go(0);
 }
 
@@ -124,13 +134,14 @@ if(tc){
   for(var k=0;k<n;k++){(function(k){var b=document.createElement('button');b.setAttribute('aria-label','Testimonial '+(k+1));b.addEventListener('click',function(){show(k)});dots2.appendChild(b)})(k)}
   function show(i){ti=(i+n)%n;tt.style.transform='translateX(-'+ti*100+'%)';$$('button',dots2).forEach(function(b,j){b.classList.toggle('on',j===ti)});clearTimeout(tm);if(!RM)tm=setTimeout(function(){show(ti+1)},6500)}
   show(0);
+  tc.addEventListener('mouseenter',function(){clearTimeout(tm)});tc.addEventListener('mouseleave',function(){show(ti)});tc.addEventListener('focusin',function(){clearTimeout(tm)});
 }
 
 /* forms */
 $$('form[data-form]').forEach(function(f){
   f.addEventListener('submit',function(e){
     e.preventDefault();var msg=$('.msg',f),btn=$('button[type=submit]',f);
-    msg.className='msg';msg.style.display='none';
+    msg.className='msg';
     var data=new FormData(f);btn.disabled=true;var old=btn.firstChild.textContent;btn.firstChild.textContent='Sending…';
     fetch('/contact.php',{method:'POST',body:data}).then(function(r){return r.json()}).then(function(j){
       if(j.ok){track('generate_lead',{form:f.dataset.form});location.href='/thank-you/'}else throw new Error(j.error||'fail')

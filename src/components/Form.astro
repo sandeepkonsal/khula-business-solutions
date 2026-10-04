@@ -3,7 +3,7 @@ import { SERVICES } from '../data/site.js';
 import Arrow from './Arrow.astro';
 const { id, title = 'Book a free consultation', sub = 'Tell us about your challenge. We reply within one working day.', src = 'contact' } = Astro.props;
 ---
-<form class="form" id={id} data-form={src} method="post" action="/contact.php" novalidate>
+<form class="form" id={id} data-form={src} method="post" action="/contact.php">
   <h3>{title}</h3><p class="sub">{sub}</p>
   <input type="hidden" name="source" value={src} />
   <div class="f hp" aria-hidden="true"><label>Leave blank<input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
