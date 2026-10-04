@@ -333,3 +333,13 @@ section{position:relative}
 /* tagline slide: bold uppercase sans, as on the original site */
 .slide .h1.caps{font-family:var(--f-body);text-transform:uppercase;font-weight:700;letter-spacing:.01em;line-height:1.02;font-size:clamp(2.3rem,6.4vw,5.2rem)}
 .slide .h1.caps .w{padding-bottom:.06em}
+
+/* capability grid on the Digital Marketing page */
+.caps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cap{background:var(--ink);border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;transition:border-color .3s,transform .3s}
+.cap:hover{border-color:rgba(255,184,112,.5);transform:translateY(-6px)}
+.cap .n{font:600 .85rem var(--f-head);color:var(--copper);letter-spacing:.1em}
+.cap h3{color:#fff;margin:22px 0 10px;font-size:1.25rem}
+.cap p{color:#b9ada1;font-size:.95rem;margin:0}
+@media(max-width:1020px){.caps-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.caps-grid{grid-template-columns:1fr}}

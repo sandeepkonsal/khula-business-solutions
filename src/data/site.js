@@ -150,18 +150,26 @@ const SERVICES = [
   {
     slug: 'digital-marketing', n: '09',
     title: 'Digital Marketing',
-    short: 'Search ads, SEO and tracking that bring in enquiries and show what each one costs.',
-    mt: 'Digital Marketing Durban | Google Ads & SEO | Khula',
-    md: 'Digital marketing for South African businesses: Google Ads, SEO, landing pages and conversion tracking, built around enquiries and measured results. Khula, Durban.',
-    h1: 'Digital Marketing That Brings You Enquiries, Not Just Clicks',
-    lead: 'Google Ads, SEO and conversion tracking, set up around one question: how many real enquiries did this bring in, and what did each one cost?',
+    short: 'Google Ads, SEO, websites, apps and branding that bring in enquiries and show what each one costs.',
+    mt: 'Digital Marketing, Websites & Apps Durban | Khula',
+    md: 'Digital marketing, website development, app development and branding for South African businesses. Google Ads, SEO and tracking built around real enquiries. Khula, Durban.',
+    h1: 'Digital Marketing, Websites & Apps That Bring You Enquiries',
+    lead: 'Everything your business needs to grow online, in one place: ads, SEO, a website that converts, apps, branding and the tracking to prove it works.',
     intro: [
-      'Many businesses spend on ads and a website without knowing what comes back. We build your digital marketing around measurable outcomes: the calls, forms and WhatsApp messages that turn into customers.',
+      'Many businesses spend on ads, a website or an app without knowing what comes back. We join the pieces up and build them around one measurable outcome: the calls, forms and WhatsApp messages that turn into customers.',
       'The same principle runs through all of Khula\u2019s work: start from a baseline, change what matters, then measure. We set up proper tracking first, so every decision on budget, keywords and pages is based on your own numbers.'
     ],
-    inc: ['Google Ads setup and management, including Search and Performance Max campaigns', 'Search engine optimisation: on-page, technical and local SEO', 'High-converting landing pages and website improvements', 'Conversion tracking with Google Tag Manager and Google Analytics 4', 'Plain-language monthly reporting on enquiries and cost per lead'],
-    who: 'Businesses in Durban and across South Africa that want a steady flow of enquiries, and teams whose current ads or website are not showing clear results.',
-    faq: [['Which digital marketing services do you offer?', 'We cover Google Ads, SEO, landing pages and website improvements, and conversion tracking and reporting. Ask us how they can be combined for your goals.'], ['How will I know the marketing is working?', 'We set up conversion tracking before spending your budget, so calls, forms and messages are counted. You receive reporting that ties spend to enquiries.'], ['Do I need a new website first?', 'Not always. We review your current site and landing pages, and recommend only the changes that will improve results.']],
+    sections: [
+      ['Google Ads', 'Search and Performance Max campaigns set up and managed around your most valuable enquiries, with budgets that follow what works.'],
+      ['SEO', 'On-page, technical and local SEO so the right customers find you in Google and on the map when they search.'],
+      ['Website Development', 'Custom-designed, mobile-first websites that load fast, are ready for search and make it easy to call, message or enquire.'],
+      ['App Development', 'Mobile and web apps that automate a process or put your service in customers\u2019 hands, from scoping and design to launch and support.'],
+      ['Branding & Design', 'Logo, brand identity, social media and ad graphics, and company profiles, so every touchpoint looks credible and consistent.'],
+      ['Tracking & Reporting', 'Conversion tracking with Google Tag Manager and GA4, plus plain-language monthly reports tying spend to enquiries and cost per lead.']
+    ],
+    inc: ['Google Ads, social media advertising and email marketing', 'Local, technical and on-page SEO', 'Website design and development, including landing pages', 'Mobile and web app development', 'Logo, brand identity and marketing design', 'Conversion tracking and monthly reporting'],
+    who: 'Businesses in Durban and across South Africa that want a steady flow of enquiries, new businesses that need a website and brand from scratch, and teams whose current ads or website are not showing clear results.',
+    faq: [['Which digital services do you offer?', 'Digital marketing (Google Ads, SEO, social and email), website development, app development, branding and design, and conversion tracking and reporting. You can start with one and add others later.'], ['How will I know the marketing is working?', 'We set up conversion tracking before spending your budget, so calls, forms and messages are counted. You receive reporting that ties spend to enquiries.'], ['Do I need a new website first?', 'Not always. We review your current site and landing pages, and recommend only the changes that will improve results.'], ['Can you build a website or app for me?', 'Yes. We design and build websites and apps from scratch around your brand and goals. After an initial conversation we scope the work and give you a clear quote.']],
     icon: '<path d="M3 11v3a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15 9a4 4 0 0 1 0 6"/><path d="M18 6a8 8 0 0 1 0 12"/>'
   }
 ];

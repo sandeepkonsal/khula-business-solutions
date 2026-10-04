@@ -27,6 +27,8 @@ const ld = [crumbs([['Home', '/'], ['Services', '/services/'], [s.title, p]]), f
       <div class="list"><b style="font-family:var(--f-head)">All services</b>{SERVICES.map((x) => <a href={`/services/${x.slug}/`} style={x.slug === s.slug ? 'color:var(--copper);font-weight:600' : undefined}>{x.title}</a>)}</div>
     </aside>
   </div></section>
+  {s.sections && <section class="sec dark" id="what-we-do"><div class="wrap"><div class="sec-head rv"><span class="eyebrow">What we do</span><h2>Everything digital, <span class="grad-text">under one roof</span></h2></div>
+    <div class="caps-grid">{s.sections.map((c, i) => <div class="cap rv" style={`--d:${i % 3}`}><span class="n">{String(i + 1).padStart(2, '0')}</span><h3>{c[0]}</h3><p>{c[1]}</p></div>)}</div></div></section>}
   <section class="sec cream"><div class="wrap"><div class="sec-head rv center" style="text-align:center"><span class="eyebrow">FAQ</span><h2>{s.title}: common questions</h2></div><Faq items={s.faq} /></div></section>
   <section class="sec"><div class="wrap"><div class="sec-head rv"><span class="eyebrow">Related services</span><h2>Often combined with</h2></div>
     <div class="related">{related.map((r, i) => <a class="rv" style={`--d:${i}`} href={`/services/${r.slug}/`}><b>{r.title}</b><span>{r.short}</span></a>)}</div></div></section>
