@@ -343,3 +343,23 @@ section{position:relative}
 .cap p{color:#b9ada1;font-size:.95rem;margin:0}
 @media(max-width:1020px){.caps-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.caps-grid{grid-template-columns:1fr}}
+
+/* service page art + layout */
+.phero .wrap.hero2{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.art-frame{margin:0;border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 40px 80px rgba(0,0,0,.5),0 0 80px rgba(224,120,48,.15);aspect-ratio:4/3;background:#101010}
+.art-frame svg,.art-frame img{width:100%;height:100%;display:block;object-fit:cover}
+.fl{animation:artfloat 6s ease-in-out infinite}.fl2{animation:artfloat 7s ease-in-out -3s infinite}
+.pulse{animation:artpulse 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.spin{animation:spin 16s linear infinite}.spin.r{animation-direction:reverse;animation-duration:11s}
+@keyframes artfloat{50%{transform:translateY(-8px)}}
+@keyframes artpulse{50%{opacity:.55;transform:scale(1.08)}}
+.inc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.inc-grid li{list-style:none;position:relative;background:#fff;border:1px solid #efe3d6;border-radius:var(--r);padding:26px 24px 26px 70px;font-weight:500;transition:transform .3s,box-shadow .3s}
+.inc-grid li::before{content:"✓";position:absolute;left:22px;top:24px;width:30px;height:30px;border-radius:50%;background:var(--grad);color:#120a04;font-weight:800;display:grid;place-items:center;font-size:.9rem}
+.inc-grid li:hover{transform:translateY(-5px);box-shadow:0 22px 44px rgba(184,92,32,.14)}
+.inc-grid{padding:0;margin-bottom:0}
+.who{display:flex;gap:18px;background:var(--black);color:#f4ece4;border-radius:var(--r);padding:28px 30px;margin-top:30px}
+.who b{font-family:var(--f-head);color:var(--amber);font-size:1.15rem;white-space:nowrap}
+.who p{margin:0;color:#d3c6ba}
+@media(max-width:1020px){.phero .wrap.hero2{grid-template-columns:1fr;gap:40px}.art-frame{max-width:560px}.inc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.inc-grid{grid-template-columns:1fr}.who{flex-direction:column;gap:8px}}

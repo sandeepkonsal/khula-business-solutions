@@ -3,9 +3,10 @@ import fs from 'fs'; import path from 'path';
 const DIST = path.resolve('dist'), OUT = path.resolve('../khula-website/preview');
 fs.rmSync(OUT, { recursive: true, force: true }); fs.mkdirSync(path.join(OUT, 'assets'), { recursive: true });
 ['logo.png', 'favicon.png', 'og-image.jpg'].forEach((f) => fs.copyFileSync(path.join(DIST, 'assets', f), path.join(OUT, 'assets', f)));
+if (fs.existsSync(path.join(DIST, 'images'))) fs.cpSync(path.join(DIST, 'images'), path.join(OUT, 'images'), { recursive: true });
 const read = (p) => fs.readFileSync(path.join(DIST, p), 'utf8');
 const map = (u) => {
-  if (u.startsWith('/assets/')) return u.slice(1);
+  if (u.startsWith('/assets/') || u.startsWith('/images/')) return u.slice(1);
   const [p, h] = u.split('#'); const hash = h ? '#' + h : '';
   if (p === '/') return 'index.html' + hash;
   const parts = p.split('/').filter(Boolean);

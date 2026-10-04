@@ -4,6 +4,7 @@ import Arrow from '../../components/Arrow.astro';
 import Tri from '../../components/Tri.astro';
 import Faq from '../../components/Faq.astro';
 import CtaBand from '../../components/CtaBand.astro';
+import ServiceArt from '../../components/ServiceArt.astro';
 import { SITE, SERVICES } from '../../data/site.js';
 import { crumbs, faq } from '../../data/schema.js';
 
@@ -12,23 +13,37 @@ export function getStaticPaths() {
 }
 const { s, related } = Astro.props;
 const p = `/services/${s.slug}/`;
+const steps = [['Diagnose', 'We start with a conversation and, where it helps, a baseline, so we know exactly what needs to change.'], ['Design', 'Your solution is built from scratch around your business, culture and goals.'], ['Deliver', 'We run the work with your team, hands-on and purpose-mapped to outcomes.'], ['Measure', 'We check results against the starting point, so impact is seen and not assumed.']];
 const ld = [crumbs([['Home', '/'], ['Services', '/services/'], [s.title, p]]), faq(s.faq), { '@context': 'https://schema.org', '@type': 'Service', name: s.title, serviceType: s.title, description: s.md, url: SITE.url + p, provider: { '@id': SITE.url + '/#org' }, areaServed: [{ '@type': 'City', name: 'Durban' }, { '@type': 'Country', name: 'South Africa' }] }];
 ---
 <Base title={s.mt} desc={s.md} path={p} active="services" ld={ld}>
-  <section class="phero"><Tri /><div class="wrap">
-    <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/services/">Services</a><span>/</span>{s.title}</div>
-    <span class="eyebrow">Service {s.n}</span><h1>{s.h1}</h1><p class="lead">{s.lead}</p>
-    <div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn btn-p" href="#enquire">Book Appointment <Arrow /></a><a class="btn btn-g" href={`tel:${SITE.tel}`}>Call {SITE.phone}</a></div>
+  <section class="phero"><Tri /><div class="wrap hero2">
+    <div>
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/services/">Services</a><span>/</span>{s.title}</div>
+      <span class="eyebrow">Service {s.n}</span><h1>{s.h1}</h1><p class="lead">{s.lead}</p>
+      <div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn btn-p" href="#enquire">Book Appointment <Arrow /></a><a class="btn btn-g" href={`tel:${SITE.tel}`}>Call {SITE.phone}</a></div>
+    </div>
+    <ServiceArt slug={s.slug} title={s.title} />
   </div></section>
+
   <section class="sec"><div class="wrap two">
-    <div class="prose rv l">{s.intro.map((t) => <p>{t}</p>)}<h2>What’s included</h2><ul>{s.inc.map((t) => <li>{t}</li>)}</ul><h2>Who it’s for</h2><p>{s.who}</p></div>
+    <div class="rv l"><div class="prose">{s.intro.map((t) => <p>{t}</p>)}</div>
+      <div class="who"><b>Who it’s for</b><p>{s.who}</p></div></div>
     <aside class="side rv r">
       <div class="box"><h3 style="color:#fff">Talk to a specialist</h3><p>Every programme is built from scratch. Tell us your challenge and we will propose a solution.</p><a class="btn btn-p" href="#enquire" style="width:100%;justify-content:center">Book Appointment</a></div>
       <div class="list"><b style="font-family:var(--f-head)">All services</b>{SERVICES.map((x) => <a href={`/services/${x.slug}/`} style={x.slug === s.slug ? 'color:var(--copper);font-weight:600' : undefined}>{x.title}</a>)}</div>
     </aside>
   </div></section>
+
+  {!s.sections && <section class="sec cream"><div class="wrap"><div class="sec-head rv"><span class="eyebrow">What’s included</span><h2>What you get with <span class="grad-text">{s.title}</span></h2></div>
+    <ul class="inc-grid">{s.inc.map((t, i) => <li class="rv" style={`--d:${i % 3}`}>{t}</li>)}</ul></div></section>}
+
   {s.sections && <section class="sec dark" id="what-we-do"><div class="wrap"><div class="sec-head rv"><span class="eyebrow">What we do</span><h2>Everything digital, <span class="grad-text">under one roof</span></h2></div>
     <div class="caps-grid">{s.sections.map((c, i) => <div class="cap rv" style={`--d:${i % 3}`}><span class="n">{String(i + 1).padStart(2, '0')}</span><h3>{c[0]}</h3><p>{c[1]}</p></div>)}</div></div></section>}
+
+  {!s.sections && <section class="sec dark"><div class="wrap"><div class="sec-head rv"><span class="eyebrow">How it works</span><h2>From first conversation to <span class="grad-text">measured results</span></h2></div>
+    <div class="steps">{steps.map((st, i) => <div class="step rv" style={`--d:${i}`}><i>{i + 1}</i><h3>{st[0]}</h3><p>{st[1]}</p></div>)}</div></div></section>}
+
   <section class="sec cream"><div class="wrap"><div class="sec-head rv center" style="text-align:center"><span class="eyebrow">FAQ</span><h2>{s.title}: common questions</h2></div><Faq items={s.faq} /></div></section>
   <section class="sec"><div class="wrap"><div class="sec-head rv"><span class="eyebrow">Related services</span><h2>Often combined with</h2></div>
     <div class="related">{related.map((r, i) => <a class="rv" style={`--d:${i}`} href={`/services/${r.slug}/`}><b>{r.title}</b><span>{r.short}</span></a>)}</div></div></section>
