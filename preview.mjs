@@ -12,7 +12,7 @@ const map = (u) => {
   const parts = p.split('/').filter(Boolean);
   return (parts[0] === 'services' && parts.length === 2 ? `service-${parts[1]}` : parts.join('-')) + '.html' + hash;
 };
-const pages = [['index.html', 'index.html'], ['about/index.html', 'about.html'], ['services/index.html', 'services.html'], ['contact/index.html', 'contact.html'], ['thank-you/index.html', 'thank-you.html'], ['corporate-training-durban/index.html', 'corporate-training-durban.html']];
+const pages = [['index.html', 'index.html'], ['about/index.html', 'about.html'], ['services/index.html', 'services.html'], ['contact/index.html', 'contact.html'], ['thank-you/index.html', 'thank-you.html'], ['corporate-training-south-africa/index.html', 'corporate-training-south-africa.html']];
 fs.readdirSync(path.join(DIST, 'services'), { withFileTypes: true }).filter((d) => d.isDirectory()).forEach((d) => pages.push([`services/${d.name}/index.html`, `service-${d.name}.html`]));
 const badge = '<div style="position:fixed;left:14px;bottom:14px;z-index:300;background:#fff;color:#111;font:600 12px Inter,system-ui,sans-serif;padding:8px 14px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.35)">Design preview · not live</div>';
 for (const [src, dest] of pages) {

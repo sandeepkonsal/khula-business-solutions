@@ -15,8 +15,8 @@ const SERVICES = [
     slug: 'pre-post-intervention-diagnostic', n: '01',
     title: 'Pre- & Post-Intervention Diagnostic',
     short: 'Benchmark before and after every intervention so impact is measured, not assumed.',
-    mt: 'Pre & Post Training Diagnostic Assessments | Durban | Khula',
-    md: 'Measure the real impact of training. Psychometric tools and qualitative insight benchmark your people before and after every intervention. Durban, South Africa.',
+    mt: 'Pre & Post Training Diagnostic Assessments | Khula',
+    md: 'Measure the real impact of training. Psychometric tools and qualitative insight benchmark your people before and after every intervention. South Africa.',
     h1: 'Pre- & Post-Intervention Diagnostics That Prove Impact',
     lead: 'Most organisations can tell you how many people attended training. Very few can tell you what changed. We benchmark before and after, so impact is measured, not assumed.',
     intro: [
@@ -32,9 +32,9 @@ const SERVICES = [
     slug: 'nlp-executive-coaching', n: '02',
     title: 'NLP-Based Executive, Business & Life Coaching',
     short: 'Targeted coaching for leadership, resilience and high performance, grounded in NLP.',
-    mt: 'NLP Executive & Business Coaching Durban | Khula',
-    md: 'NLP-certified executive, business and life coaching in Durban. Build leadership presence, resilience and high performance with Khula Business Solutions.',
-    h1: 'NLP-Based Executive, Business & Life Coaching in Durban',
+    mt: 'NLP Executive & Business Coaching South Africa | Khula',
+    md: 'NLP-certified executive, business and life coaching in South Africa. Build leadership presence, resilience and high performance with Khula Business Solutions.',
+    h1: 'NLP-Based Executive, Business & Life Coaching in South Africa',
     lead: 'Targeted coaching for leaders who want to move from the performance they are delivering to the performance they are capable of.',
     intro: [
       'Neuro-Linguistic Programming gives us a sharper lens on how people think, communicate and quietly get in their own way. Our coaching is grounded in NLP and built around the individual, whether that is an executive carrying a transformation agenda or a professional navigating a career crossroads.',
@@ -49,8 +49,8 @@ const SERVICES = [
     slug: 'tailored-training-solutions', n: '03',
     title: 'Tailored Training Solutions',
     short: 'Learning experiences designed and delivered around your strategy and goals.',
-    mt: 'Tailored Corporate Training Durban | Custom Programmes | Khula',
-    md: 'Custom-designed corporate training in Durban, built from scratch around your culture, challenges and goals. No recycled courseware. Khula Business Solutions.',
+    mt: 'Tailored Corporate Training South Africa | Khula',
+    md: 'Custom-designed corporate training in South Africa, built from scratch around your culture, challenges and goals. No recycled courseware. Khula Business Solutions.',
     h1: 'Tailored Corporate Training Built From Scratch',
     lead: 'No recycled courseware. No programme someone else already ran somewhere else. Every learning experience is designed around your business.',
     intro: [
@@ -66,8 +66,8 @@ const SERVICES = [
     slug: 'mindset-behaviour-transformation', n: '04',
     title: 'Mindset & Behaviour Transformation',
     short: 'Shift mindset, behaviour, habits and culture to unlock sustainable performance.',
-    mt: 'Mindset & Behaviour Change Programmes Durban | Khula',
-    md: 'Behaviour change programmes that unlock sustainable performance. Shift mindset, habits and culture in your organisation. Khula Business Solutions, Durban.',
+    mt: 'Mindset & Behaviour Change South Africa | Khula',
+    md: 'Behaviour change programmes that unlock sustainable performance. Shift mindset, habits and culture in your organisation. Khula Business Solutions, South Africa.',
     h1: 'Mindset & Behaviour Transformation for Organisations',
     lead: 'Organisations think they have a performance problem when what they have is a behaviour problem. We close the gap at its source.',
     intro: [
@@ -83,8 +83,8 @@ const SERVICES = [
     slug: 'change-management', n: '05',
     title: 'Change Management',
     short: 'Structured support to help teams navigate transition and embed lasting change.',
-    mt: 'Change Management Consulting Durban & South Africa | Khula',
-    md: 'People-centred change management for South African organisations. Help your teams navigate transition and embed lasting change. Khula Business Solutions, Durban.',
+    mt: 'Change Management Consulting South Africa | Khula',
+    md: 'People-centred change management for South African organisations. Help your teams navigate transition and embed lasting change. Khula Business Solutions, South Africa.',
     h1: 'People-Centred Change Management in South Africa',
     lead: 'Change fails when people are an afterthought. We put them at the centre, so transition lands and sticks.',
     intro: [
@@ -100,8 +100,8 @@ const SERVICES = [
     slug: 'project-management', n: '06',
     title: 'Project Management',
     short: 'End-to-end planning, execution and oversight for impactful delivery.',
-    mt: 'Project Management Services & Training Durban | Khula',
-    md: 'End-to-end project management for impactful delivery. Planning, execution and oversight with a people-first approach. Khula Business Solutions, Durban.',
+    mt: 'Project Management Services South Africa | Khula',
+    md: 'End-to-end project management for impactful delivery. Planning, execution and oversight with a people-first approach. Khula Business Solutions, South Africa.',
     h1: 'Project Management That Delivers on Time, With People On Board',
     lead: 'End-to-end planning, execution and oversight, with the people dimension managed as carefully as the plan.',
     intro: [
@@ -117,9 +117,9 @@ const SERVICES = [
     slug: 'business-computer-skills-training', n: '07',
     title: 'Business & Computer Skills Training',
     short: 'Practical skills development to boost operational efficiency and digital fluency.',
-    mt: 'Business & Computer Skills Training Durban | Khula',
-    md: 'Practical business and computer skills training in Durban that boosts efficiency and digital fluency. Corporate and public-sector teams. Khula Business Solutions.',
-    h1: 'Business & Computer Skills Training in Durban',
+    mt: 'Business & Computer Skills Training South Africa | Khula',
+    md: 'Practical business and computer skills training in South Africa that boosts efficiency and digital fluency. Corporate and public-sector teams. Khula Business Solutions.',
+    h1: 'Business & Computer Skills Training in South Africa',
     lead: 'Practical skills development that lifts operational efficiency and digital fluency across your workforce.',
     intro: [
       'Our founder began her career in IT training, and that foundation still runs through our work. We deliver practical business and computer skills training that people can apply the next morning, not theory that fades by Friday.',
@@ -134,8 +134,8 @@ const SERVICES = [
     slug: 'train-the-trainer', n: '08',
     title: 'Train the Trainer',
     short: 'Equip internal trainers with the skills and confidence to sustain learning.',
-    mt: 'Train the Trainer Programmes Durban | Facilitation Skills | Khula',
-    md: 'Train the Trainer programmes that equip your internal facilitators to deliver and sustain learning long after we leave the room. Khula Business Solutions, Durban.',
+    mt: 'Train the Trainer Programmes South Africa | Khula',
+    md: 'Train the Trainer programmes that equip your internal facilitators to deliver and sustain learning long after we leave the room. Khula Business Solutions, South Africa.',
     h1: 'Train the Trainer Programmes for Internal Facilitators',
     lead: 'Equip your internal trainers and facilitators with the skills and confidence to sustain learning long after we have left the room.',
     intro: [
@@ -151,8 +151,8 @@ const SERVICES = [
     slug: 'digital-marketing', n: '09',
     title: 'Digital Marketing',
     short: 'Google Ads, SEO, websites, apps and branding that bring in enquiries and show what each one costs.',
-    mt: 'Digital Marketing, Websites & Apps Durban | Khula',
-    md: 'Digital marketing, website development, app development and branding for South African businesses. Google Ads, SEO and tracking built around real enquiries. Khula, Durban.',
+    mt: 'Digital Marketing, Websites & Apps South Africa | Khula',
+    md: 'Digital marketing, website development, app development and branding for South African businesses. Google Ads, SEO and tracking built around real enquiries. Khula, South Africa.',
     h1: 'Digital Marketing, Websites & Apps That Bring You Enquiries',
     lead: 'Everything your business needs to grow online, in one place: ads, SEO, a website that converts, apps, branding and the tracking to prove it works.',
     intro: [
@@ -168,7 +168,7 @@ const SERVICES = [
       ['Tracking & Reporting', 'Conversion tracking with Google Tag Manager and GA4, plus plain-language monthly reports tying spend to enquiries and cost per lead.']
     ],
     inc: ['Google Ads, social media advertising and email marketing', 'Local, technical and on-page SEO', 'Website design and development, including landing pages', 'Mobile and web app development', 'Logo, brand identity and marketing design', 'Conversion tracking and monthly reporting'],
-    who: 'Businesses in Durban and across South Africa that want a steady flow of enquiries, new businesses that need a website and brand from scratch, and teams whose current ads or website are not showing clear results.',
+    who: 'Businesses across South Africa that want a steady flow of enquiries, new businesses that need a website and brand from scratch, and teams whose current ads or website are not showing clear results.',
     faq: [['Which digital services do you offer?', 'Digital marketing (Google Ads, SEO, social and email), website development, app development, branding and design, and conversion tracking and reporting. You can start with one and add others later.'], ['How will I know the marketing is working?', 'We set up conversion tracking before spending your budget, so calls, forms and messages are counted. You receive reporting that ties spend to enquiries.'], ['Do I need a new website first?', 'Not always. We review your current site and landing pages, and recommend only the changes that will improve results.'], ['Can you build a website or app for me?', 'Yes. We design and build websites and apps from scratch around your brand and goals. After an initial conversation we scope the work and give you a clear quote.']],
     icon: '<path d="M3 11v3a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15 9a4 4 0 0 1 0 6"/><path d="M18 6a8 8 0 0 1 0 12"/>'
   }
@@ -188,9 +188,9 @@ const HOME_FAQ = [
   ['How do you customise your solutions to our needs?', 'Nothing is recycled. Every intervention is built from scratch around your business, culture, challenges and desired outcomes. We start with a conversation, and where it helps a diagnostic, so the programme targets what is really holding performance back.'],
   ['How do you measure the impact of your interventions?', 'We benchmark before and after every intervention using psychometric tools and qualitative insight, so impact is measured, not assumed.'],
   ['What is the difference between your training and coaching services?', 'Tailored training builds skills and shifts behaviour across groups and teams. NLP-based coaching works one-on-one with executives, business owners and professionals on leadership, resilience and personal performance. Many clients combine the two.'],
-  ['Can you help with change and projects, not just training?', 'Yes. Our change management service helps teams navigate transition and embed lasting change, and our project management service covers end-to-end planning, execution and oversight, with the people side managed as carefully as the plan.'],
+  ['Can you help with change and projects as well as training?', 'Yes. Our change management service helps teams navigate transition and embed lasting change, and our project management service covers end-to-end planning, execution and oversight, with the people side managed as carefully as the plan.'],
   ['Can you train our own trainers and facilitators?', 'Yes. Our Train the Trainer programmes equip your internal trainers with the skills and confidence to design, deliver and sustain learning long after we have left the room.'],
-  ['Who do you work with, and where?', 'We are based in Durban and work with government departments, parastatals and corporate clients, including Transnet, Unilever, RCL Foods, Prasa, Ezemvelo KZN Wildlife, Smith’s Manufacturing, the Department of Education and Meropa Communications.'],
+  ['Who do you work with, and where?', 'We work with government departments, parastatals and corporate clients, including Transnet, Unilever, RCL Foods, Prasa, Ezemvelo KZN Wildlife, Smith’s Manufacturing, the Department of Education and Meropa Communications.'],
   ['Is your approach grounded in a particular methodology?', 'Our work is practical, evidence-based and relentlessly tailored. Activities are interactive and game-based, purpose-mapped to a behavioural outcome and debriefed using NLP-based techniques, which our founder is certified in.'],
   ['How do I get a quote or book an appointment?', 'Call +27 83 570 1564, email thilo@khulabs.co.za or send the enquiry form. We will arrange a conversation to understand your challenge before proposing a solution.']
 ];

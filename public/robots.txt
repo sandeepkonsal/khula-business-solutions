@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /thank-you/
-Disallow: /corporate-training-durban/
+Disallow: /corporate-training-south-africa/
 
 Sitemap: https://khulabusinesssolutions.co.za/sitemap-index.xml

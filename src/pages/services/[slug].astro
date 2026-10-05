@@ -14,7 +14,7 @@ export function getStaticPaths() {
 const { s, related } = Astro.props;
 const p = `/services/${s.slug}/`;
 const steps = [['Diagnose', 'We start with a conversation and, where it helps, a baseline, so we know exactly what needs to change.'], ['Design', 'Your solution is built from scratch around your business, culture and goals.'], ['Deliver', 'We run the work with your team, hands-on and purpose-mapped to outcomes.'], ['Measure', 'We check results against the starting point, so impact is seen and not assumed.']];
-const ld = [crumbs([['Home', '/'], ['Services', '/services/'], [s.title, p]]), faq(s.faq), { '@context': 'https://schema.org', '@type': 'Service', name: s.title, serviceType: s.title, description: s.md, url: SITE.url + p, provider: { '@id': SITE.url + '/#org' }, areaServed: [{ '@type': 'City', name: 'Durban' }, { '@type': 'Country', name: 'South Africa' }] }];
+const ld = [crumbs([['Home', '/'], ['Services', '/services/'], [s.title, p]]), faq(s.faq), { '@context': 'https://schema.org', '@type': 'Service', name: s.title, serviceType: s.title, description: s.md, url: SITE.url + p, provider: { '@id': SITE.url + '/#org' }, areaServed: [{ '@type': 'Country', name: 'South Africa' }] }];
 ---
 <Base title={s.mt} desc={s.md} path={p} active="services" ld={ld}>
   <section class="phero"><Tri /><div class="wrap hero2">

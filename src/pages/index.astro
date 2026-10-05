@@ -8,8 +8,8 @@ import { SITE, SERVICES, TESTIMONIALS, CLIENTS, HOME_FAQ } from '../data/site.js
 import { org, faq } from '../data/schema.js';
 
 const slides = [
-  { eb: 'People-transformation, not training', h: 'Learning to live,|Living to learn.', caps: true, first: true, lead: 'Khula Business Solutions has spent almost three decades helping leaders and organisations close the gap between the performance they’re delivering and the performance they’re actually capable of, built from scratch, every time.', cta: 'Let’s Talk', core: ['29+', 'Years of experience'], chips: ['Built from scratch', 'Behaviour-led', 'Measured impact'] },
-  { eb: 'Durban · 29+ years of people-transformation', h: 'People-transformation, not training.', lead: 'We solve business performance problems through learning. Every intervention is built from scratch around your culture, your challenges and your numbers.', core: ['9', 'Specialist services'], chips: ['Built from scratch', 'Behaviour-led', 'Measured impact'] },
+  { eb: 'People-transformation through learning', h: 'Learning to live,|Living to learn.', caps: true, first: true, lead: 'Khula Business Solutions has spent almost three decades helping leaders and organisations close the gap between the performance they’re delivering and the performance they’re actually capable of, built from scratch, every time.', cta: 'Let’s Talk', core: ['29+', 'Years of experience'], chips: ['Built from scratch', 'Behaviour-led', 'Measured impact'] },
+  { eb: 'South Africa · 29+ years of people-transformation', h: 'Training that changes behaviour, not just knowledge.', lead: 'We solve business performance problems through learning. Every intervention is built from scratch around your culture, your challenges and your numbers.', core: ['9', 'Specialist services'], chips: ['Built from scratch', 'Behaviour-led', 'Measured impact'] },
   { eb: 'The human operating system', h: 'The bottleneck is rarely the system. It’s the people behind it.', lead: 'When organisations think they have a performance problem, they usually have a behaviour problem. We close the gap between the performance you deliver and the performance you are capable of.', core: ['100%', 'Female-owned & managed'], chips: ['NLP-certified', 'Evidence-based', 'Relentlessly tailored'] },
   { eb: 'Trusted across all three tiers', h: 'Government. Parastatal. Corporate.', lead: 'From Transnet and Unilever to the KZN Department of Education, leaders trust Khula to turn learning into lasting performance.', core: ['3', 'Client tiers served'], chips: ['Transnet', 'RCL Foods', 'Unilever'] },
 ];
@@ -17,7 +17,7 @@ const steps = [['Diagnose', 'Benchmark where your people, teams and leaders are 
 const values = ['Service excellence', 'Integrity', 'Collaboration', 'Flexibility', 'Transparency', 'Fairness'];
 const ld = [org, { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.name, url: SITE.url, publisher: { '@id': SITE.url + '/#org' } }, faq(HOME_FAQ)];
 ---
-<Base title="Corporate Training & NLP Coaching Durban | Khula" desc="Durban people-transformation consultancy. Tailored corporate training, NLP coaching, change & project management. 29+ years, trusted by Transnet, Unilever & government." path="/" active="home" ld={ld}>
+<Base title="Corporate Training & NLP Coaching South Africa | Khula" desc="South African people-transformation consultancy. Tailored corporate training, NLP coaching, change & project management. 29+ years, trusted by Transnet, Unilever & government." path="/" active="home" ld={ld}>
   <section class="hero" aria-roledescription="carousel" aria-label="Khula highlights"><canvas id="fx" aria-hidden="true"></canvas>
     <div class="slides">
       {slides.map((s, i) => {
@@ -28,7 +28,7 @@ const ld = [org, { '@context': 'https://schema.org', '@type': 'WebSite', name: S
           <Tag class={s.caps ? 'h1 caps' : 'h1'}>{s.h.split('|').map((line, li, arr) => <Fragment>{line.split(' ').map((w, k) => <Fragment><span class="w"><span style={`--i:${k + li * 3}`}>{w}</span></span>{' '}</Fragment>)}{li < arr.length - 1 && <br />}</Fragment>)}</Tag>
           <p class="lead">{s.lead}</p>
           <div class="ctas"><a class="btn btn-p" href="/contact/#enquire">{s.cta ?? 'Book Appointment'} <Arrow /></a><a class="btn btn-g" href="/services/">Explore services</a></div>
-          <div class="badge-row"><span><i></i>Durban-based</span><span><i></i>Gov · Parastatal · Corporate</span><span><i></i>Learning to Live, Living to Learn</span></div></div>
+          <div class="badge-row"><span><i></i>Serving South Africa</span><span><i></i>Gov · Parastatal · Corporate</span><span><i></i>Learning to Live, Living to Learn</span></div></div>
           <div class="vis" aria-hidden="true"><div class="ring"></div><div class="ring r2"></div><div class="core"><div><b>{s.core[0]}</b><small>{s.core[1]}</small></div></div>{s.chips.map((c) => <span class="chip">{c}</span>)}</div>
         </div></div>
       )})}
@@ -46,14 +46,14 @@ const ld = [org, { '@context': 'https://schema.org', '@type': 'WebSite', name: S
   <section class="sec"><div class="wrap split">
     <div class="rv l"><span class="eyebrow">Who we are</span><h2>Performance problem, or <span class="grad-text">behaviour problem?</span></h2>
       <p>A pattern we see time and again: organisations think they have a performance problem when what they actually have is a behaviour problem, the human operating system behind every strategy, system and target. What is usually missing isn't effort. It's behavioural alignment.</p>
-      <p>Based in Durban, Khula Business Solutions has spent almost three decades helping leaders and organisations close that gap, moving from the performance they are delivering to the performance they are actually capable of.</p>
+      <p>Khula Business Solutions has spent almost three decades helping leaders and organisations close that gap, moving from the performance they are delivering to the performance they are actually capable of.</p>
       <a class="btn btn-dark" href="/about/">Our story <Arrow /></a></div>
     <div class="rv r"><div class="quote"><blockquote>Sustainable performance is never just about strategy. It’s about the people executing it.</blockquote><cite>Thilo Nagiah, Founder</cite></div>
       <div class="stats"><div class="stat"><b data-to="29" data-suf="+">0</b><span>Years of people-transformation experience</span></div><div class="stat"><b data-to="100" data-suf="%">0</b><span>Female-owned & managed</span></div><div class="stat"><b data-to="9">0</b><span>Specialist services under one roof</span></div></div></div>
   </div></section>
 
   <section class="sec dark"><div class="wrap">
-    <div class="sec-head rv"><span class="eyebrow">Our services</span><h2>We don’t deliver training. We solve business performance problems <span class="grad-text">through learning.</span></h2></div>
+    <div class="sec-head rv"><span class="eyebrow">Our services</span><h2>We solve business performance problems <span class="grad-text">through learning.</span></h2></div>
     <div class="cards">{SERVICES.map((s, i) => <a class="card rv" style={`--d:${i % 4}`} href={`/services/${s.slug}/`}><span class="n">{s.n}</span><Icon class="ic" d={s.icon} /><h3>{s.title}</h3><p>{s.short}</p><span class="go">Learn more <Arrow /></span></a>)}</div>
   </div></section>
 
