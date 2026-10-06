@@ -8,5 +8,5 @@ import { SITE, SERVICES } from '../data/site.js';
     <div><h4>Services</h4><ul>{SERVICES.map((s) => <li><a href={`/services/${s.slug}/`}>{s.title}</a></li>)}</ul></div>
     <div><h4>Talk to us</h4><ul><li><a href={`tel:${SITE.tel}`}>{SITE.phone}</a></li><li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li><li>South Africa</li><li>{SITE.hours}</li></ul></div>
   </div>
-  <div class="fbar"><span>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</span><span class="tagline">Learning to <em>Live</em>, Living to <em>Learn</em></span></div>
+  <div class="fbar"><span>© {new Date().getFullYear()} {SITE.name}. All rights reserved. · <a href="/privacy-policy/">Privacy Policy</a></span><span class="tagline">Learning to <em>Live</em>, Living to <em>Learn</em></span></div>
 </div></footer>

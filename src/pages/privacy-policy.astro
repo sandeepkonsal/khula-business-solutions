@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import Tri from '../components/Tri.astro';
+import { SITE } from '../data/site.js';
+import { crumbs } from '../data/schema.js';
+---
+<Base title="Privacy Policy | Khula Business Solutions" desc="How Khula Business Solutions collects, uses and protects your personal information, in line with South Africa's Protection of Personal Information Act (POPIA)." path="/privacy-policy/" ld={[crumbs([['Home', '/'], ['Privacy Policy', '/privacy-policy/']])]}>
+  <section class="phero"><Tri /><div class="wrap"><div class="crumbs"><a href="/">Home</a><span>/</span>Privacy Policy</div><span class="eyebrow">Legal</span><h1>Privacy <span class="grad-text">Policy</span></h1><p class="lead">How we collect, use and protect your personal information.</p></div></section>
+  <section class="sec"><div class="wrap"><div class="prose">
+    <p><em>Last updated: 6 October 2026</em></p>
+    <p>{SITE.name} (“Khula”, “we”, “us”) respects your privacy. This policy explains what personal information we collect through this website, why we collect it and what your rights are under South Africa’s Protection of Personal Information Act, 2013 (POPIA).</p>
+    <h2>Who is responsible</h2>
+    <p>{SITE.name} is the responsible party for personal information collected through this website. You can contact us at <a href={`mailto:${SITE.email}`}>{SITE.email}</a> or on <a href={`tel:${SITE.tel}`}>{SITE.phone}</a>.</p>
+    <h2>What we collect</h2>
+    <ul>
+      <li><b>Enquiry details.</b> When you use our contact or enquiry forms we collect your name, company, email address, phone number, the service you are interested in and your message.</li>
+      <li><b>Website usage data.</b> If analytics is enabled, we collect information such as pages visited, device type and approximate location, using tools such as Google Analytics and Google Tag Manager. This data does not identify you personally.</li>
+      <li><b>Communications.</b> If you email, call or message us on WhatsApp, we keep that correspondence so we can respond.</li>
+    </ul>
+    <h2>Why we use it</h2>
+    <ul>
+      <li>To respond to your enquiry and provide the services you ask about.</li>
+      <li>To improve our website and understand which pages are useful.</li>
+      <li>To meet our legal and contractual obligations.</li>
+    </ul>
+    <p>We do not sell your personal information.</p>
+    <h2>Who we share it with</h2>
+    <p>We share information only with service providers who help us run the website and communicate with you, such as our web host, email provider and analytics providers, and only as needed for those purposes. We may also disclose information where the law requires it.</p>
+    <h2>How long we keep it</h2>
+    <p>We keep enquiry details for as long as needed to respond to you and manage any resulting relationship, and then delete or anonymise them unless the law requires us to keep them longer.</p>
+    <h2>How we protect it</h2>
+    <p>We take reasonable technical and organisational steps to protect personal information from loss, misuse and unauthorised access. This website is served over HTTPS.</p>
+    <h2>Your rights</h2>
+    <p>Under POPIA you may ask us to confirm what personal information we hold about you, to correct or delete it, or to stop using it for a particular purpose. Email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> and we will respond within a reasonable time. If you are unhappy with how we handle your information you may complain to the Information Regulator (South Africa) at <a href="https://inforegulator.org.za" rel="noopener">inforegulator.org.za</a>.</p>
+    <h2>Cookies and analytics</h2>
+    <p>This website may use cookies and similar technologies to measure traffic. You can block or delete cookies in your browser settings. Doing so will not stop you from using the website.</p>
+    <h2>Third-party links</h2>
+    <p>Our website may link to other sites, such as WhatsApp. We are not responsible for their privacy practices.</p>
+    <h2>Changes to this policy</h2>
+    <p>We may update this policy from time to time. The date at the top shows when it was last changed.</p>
+  </div></div></section>
+</Base>
