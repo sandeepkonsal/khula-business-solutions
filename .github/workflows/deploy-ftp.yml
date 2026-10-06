@@ -1,4 +1,4 @@
-name: Deploy to Xneelo (manual)
+name: Deploy over FTP (manual)
 # Optional. Runs only when you click "Run workflow" in the GitHub Actions tab.
 # Needs three repository secrets (Settings > Secrets and variables > Actions): FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
 on:

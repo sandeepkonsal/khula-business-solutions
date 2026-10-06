@@ -1,5 +1,5 @@
 // GitHub Pages serves this repo under /<repo>/, so prefix root-relative URLs after `astro build`.
-// The Xneelo build (domain root) skips this step. Test copy is also marked noindex.
+// The the web host build (domain root) skips this step. Test copy is also marked noindex.
 import fs from 'fs'; import path from 'path';
 const BASE = process.env.PAGES_BASE; // e.g. /khula-business-solutions
 if (!BASE) throw new Error('PAGES_BASE not set');
