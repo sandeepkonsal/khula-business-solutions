@@ -7,7 +7,9 @@ const SITE = {
   wa: 'https://wa.me/27835701564?text=Hi%20Khula%2C%20I%27d%20like%20to%20talk%20about%20a%20people%20performance%20challenge.',
   gtm: '',            // e.g. 'GTM-XXXXXXX', leave blank until the container exists
   ga4: '',            // e.g. 'G-XXXXXXXXXX' — only used if GTM is blank
-  hours: 'Mon – Fri, 8am – 4pm'
+  hours: 'Mon – Fri, 8am – 4pm',
+  formEndpoint: 'https://api.web3forms.com/submit',
+  formKey: ''         // free access key from web3forms.com (emails enquiries to thilo@khulabs.co.za)
 };
 
 const SERVICES = [

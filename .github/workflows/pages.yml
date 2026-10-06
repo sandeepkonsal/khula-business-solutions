@@ -1,4 +1,4 @@
-name: Deploy test copy to GitHub Pages
+name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
@@ -21,7 +21,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - run: node scripts/pages-rewrite.mjs
+      # Test-copy mode (no custom domain yet): prefix links with /<repo>/ and hide from Google.
+      # Once the repository variable CUSTOM_DOMAIN is set, the site is built for the domain root as-is.
+      - if: ${{ vars.CUSTOM_DOMAIN == '' }}
+        run: node scripts/pages-rewrite.mjs
         env:
           PAGES_BASE: /${{ github.event.repository.name }}
       - uses: actions/upload-pages-artifact@v3

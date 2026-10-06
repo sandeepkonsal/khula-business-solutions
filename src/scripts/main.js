@@ -143,8 +143,9 @@ $$('form[data-form]').forEach(function(f){
     e.preventDefault();var msg=$('.msg',f),btn=$('button[type=submit]',f);
     msg.className='msg';
     var data=new FormData(f);btn.disabled=true;var old=btn.firstChild.textContent;btn.firstChild.textContent='Sending…';
-    fetch('/contact.php',{method:'POST',body:data}).then(function(r){return r.json()}).then(function(j){
-      if(j.ok){track('generate_lead',{form:f.dataset.form});location.href='/thank-you/'}else throw new Error(j.error||'fail')
+    if(!data.get('access_key')){msg.className='msg err';msg.textContent='The enquiry form is not connected yet. Please email thilo@khulabs.co.za or call +27 83 570 1564.';btn.disabled=false;btn.firstChild.textContent=old;return}
+    fetch(f.action,{method:'POST',body:data,headers:{Accept:'application/json'}}).then(function(r){return r.json()}).then(function(j){
+      if(j.success){track('generate_lead',{form:f.dataset.form});location.href='/thank-you/'}else throw new Error(j.message||'fail')
     }).catch(function(){
       msg.className='msg err';msg.innerHTML='Sorry, we could not send that just now. Please email <a href="mailto:thilo@khulabs.co.za">thilo@khulabs.co.za</a> or call <a href="tel:+27835701564">+27 83 570 1564</a>.';
       btn.disabled=false;btn.firstChild.textContent=old;

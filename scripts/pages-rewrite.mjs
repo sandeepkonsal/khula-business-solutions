@@ -8,7 +8,7 @@ for (const f of walk('dist')) {
   if (!/\.(html|js|css)$/.test(f)) continue;
   let s = fs.readFileSync(f, 'utf8');
   if (f.endsWith('.html')) {
-    s = s.replace(/(href|src|action)="\/(?!\/)/g, `$1="${BASE}/`).replace(/content="index,follow[^"]*"/, 'content="noindex,nofollow"').replace(/<link rel="canonical"[^>]*>/, '');
+    s = s.replace(/(href|src|action)="\/(?!\/)/g, `$1="${BASE}/`).replace(/content="0;url=\//g, `content="0;url=${BASE}/`).replace(/content="index,follow[^"]*"/, 'content="noindex,nofollow"').replace(/<link rel="canonical"[^>]*>/, '');
   } else if (f.endsWith('.js')) {
     s = s.replace(/"\/thank-you\/"/g, `"${BASE}/thank-you/"`).replace(/"\/contact\.php"/g, `"${BASE}/contact.php"`);
   }
