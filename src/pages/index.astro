@@ -25,10 +25,10 @@ const ld = [org, { '@context': 'https://schema.org', '@type': 'WebSite', name: S
         return (
         <div class="slide" role="group" aria-roledescription="slide" aria-label={`${i + 1} of ${slides.length}`}><div class="wrap"><div>
           <span class="eyebrow">{s.eb}</span>
-          <Tag class={s.caps ? 'h1 caps' : 'h1'}>{s.h.split('|').map((line, li, arr) => <Fragment>{line.split(' ').map((w, k) => <Fragment><span class="w"><span style={`--i:${k + li * 3}`}>{w}</span></span>{' '}</Fragment>)}{li < arr.length - 1 && <br />}</Fragment>)}</Tag>
+          <Tag class={s.caps ? 'h1 caps' : 'h1'}>{s.h.split('|').map((line, li, arr) => <Fragment>{line.split(' ').map((w, k) => <Fragment><span class="w"><span class={s.caps ? (/^(live|learn)[,.]?$/i.test(w) ? 'tl' : 'td') : undefined} style={`--i:${k + li * 3}`}>{w}</span></span>{' '}</Fragment>)}{li < arr.length - 1 && <br />}</Fragment>)}</Tag>
           <p class="lead">{s.lead}</p>
           <div class="ctas"><a class="btn btn-p" href="/contact/#enquire">{s.cta ?? 'Book Appointment'} <Arrow /></a><a class="btn btn-g" href="/services/">Explore services</a></div>
-          <div class="badge-row"><span><i></i>Serving South Africa</span><span><i></i>Gov · Parastatal · Corporate</span><span><i></i>Learning to Live, Living to Learn</span></div></div>
+          <div class="badge-row"><span><i></i>Serving South Africa</span><span><i></i>Gov · Parastatal · Corporate</span><span><i></i><b class="tagline">Learning to <em>Live</em>, Living to <em>Learn</em></b></span></div></div>
           <div class="vis" aria-hidden="true"><div class="ring"></div><div class="ring r2"></div><div class="core"><div><b>{s.core[0]}</b><small>{s.core[1]}</small></div></div>{s.chips.map((c) => <span class="chip">{c}</span>)}</div>
         </div></div>
       )})}

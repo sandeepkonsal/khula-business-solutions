@@ -429,3 +429,15 @@ body.menu-open{overflow:hidden}
 /* header CTA: keep the copper fill (.nav>a reset was removing it) */
 .nav>a.btn-p{background:var(--grad);color:#120a04;padding:12px 24px}
 .nav>a.btn-p:hover{color:#120a04}
+
+/* tagline colours taken from the Khula brand wordmark */
+:root{--tag-dark:#ba6238;--tag-light:#f2b982}
+.slide .h1.caps .td{color:var(--tag-dark)}
+.slide .h1.caps .tl{color:var(--tag-light)}
+.tagline{font-weight:600;color:var(--tag-dark);letter-spacing:.02em}
+.tagline em{font-style:normal;color:var(--tag-light)}
+.badge-row b.tagline{font-weight:600}
+
+/* tagline slide: two lines, sized to the column so "LEARNING TO LIVE," never wraps */
+.slide .h1.caps{white-space:nowrap;font-size:min(4.4rem,calc((100vw - 48px)/11.2))}
+@media(min-width:1021px){.slide .h1.caps{font-size:min(3.85rem,calc((100vw - 108px)*.0568))}}
