@@ -1,0 +1,18 @@
+host,type,value,ttl,prio
+khulabusinesssolutions.co.za,A,41.222.32.29,600,
+www.khulabusinesssolutions.co.za,CNAME,khulabusinesssolutions.co.za,3600,
+*.khulabusinesssolutions.co.za,CNAME,khulabusinesssolutions.co.za,120,
+khulabusinesssolutions.co.za,MX,mx1.tld-mx.com,3600,10
+khulabusinesssolutions.co.za,TXT,v=spf1 +a +mx include:_spf.tld-mx.com ~all,3600,
+mail.khulabusinesssolutions.co.za,A,41.222.32.29,600,
+ftp.khulabusinesssolutions.co.za,A,41.222.32.29,3600,
+cpanel.khulabusinesssolutions.co.za,A,41.222.32.29,3600,
+whm.khulabusinesssolutions.co.za,A,41.222.32.29,3600,
+webdisk.khulabusinesssolutions.co.za,A,41.222.32.29,3600,
+autodiscover.khulabusinesssolutions.co.za,A,41.222.32.29,3600,
+autoconfig.khulabusinesssolutions.co.za,A,41.222.32.29,3600,
+webmail.khulabusinesssolutions.co.za,CNAME,mail.khulabusinesssolutions.co.za,3600,
+smtp.khulabusinesssolutions.co.za,CNAME,mail.khulabusinesssolutions.co.za,3600,
+imap.khulabusinesssolutions.co.za,CNAME,mail.khulabusinesssolutions.co.za,3600,
+pop.khulabusinesssolutions.co.za,CNAME,mail.khulabusinesssolutions.co.za,3600,
+pop3.khulabusinesssolutions.co.za,CNAME,mail.khulabusinesssolutions.co.za,3600,
